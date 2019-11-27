@@ -1,0 +1,41 @@
+{
+    "name": "svelte-luda",
+    "version": "0.0.0",
+    "description": "Svelte bindings for the Luda CSS framework",
+    "keywords": [],
+    "main": "lib/svelte-luda.js",
+    "typings": "types/svelte-luda.d.ts",
+    "files": [
+        "dist",
+        "lib",
+        "types"
+    ],
+    "author": "novacbn",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/novacbn/svelte-luda"
+    },
+    "license": "MIT",
+    "engines": {
+        "node": ">=6.0.0"
+    },
+    "scripts": {
+        "build:docs": "parcel build --out-dir ./docs/dist ./docs/index.html",
+        "build:lib": "npm run build:lib:browser",
+        "build:lib:browser": "parcel build ./src/svelte-luda.js --experimental-scope-hoisting --global luda --out-file ./dist/svelte-luda.umd.js",
+        "serve:docs": "parcel serve --out-dir ./docs/dist ./docs/index.html",
+        "prebuild:clean": "rimraf dist"
+    },
+    "devDependencies": {
+        "@sveltejs/svelte-repl": "^0.1.16",
+        "codeflask": "^1.4.1",
+        "parcel-bundler": "^1.12.4",
+        "parcel-plugin-svelte": "^4.0.5",
+        "prettier": "^1.14.3",
+        "rimraf": "^3.0.0"
+    },
+    "dependencies": {
+        "luda": "^0.3.0",
+        "svelte": "^3.15.0"
+    }
+}
