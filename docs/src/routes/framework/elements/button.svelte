@@ -1,17 +1,45 @@
 <script>
-    import Repl from "../../components/Repl.svelte";
+    import Repl from "../../../components/Repl.svelte";
+    import Layout from "../_layout.svelte";
 
     import examples from "./_examples.toml";
 </script>
 
-<main class="container">
+<Layout>
+    <article class="article">
+        <h1 class="fw-semibold">Button</h1>
+        <h3 class="fw-light">
+            Buttons are simple blocky elements that be clicked to active internal application
+            functionality or even some times act as a link.
+        </h3>
+
+        <h2>Import via CommonJS</h2>
+        <pre>
+            <code>const Button = require("svelte-luda/lib/elements/Button.svelte");</code>
+        </pre>
+
+        <h2>Import via ES2015</h2>
+        <pre>
+            <code>import Button from "svelte-luda/lib/elements/Button.svelte";</code>
+        </pre>
+
+        <h2>
+            Import from
+            <code>{'<script />'}</code>
+            Package
+        </h2>
+        <pre>
+            <code>const {'{Button}'} = window.luda;</code>
+        </pre>
+    </article>
+
     <article class="article">
         <h1>Button Styles</h1>
         <p>
             A button can be created by using the
-            <code>lib/elements/Button.svelte</code>
-            element, along with using properties to customize the look and feel. Let's preview the
-            button styles in the below examples.
+            <code>Button</code>
+            Component, can be customized with different a look and feel. Let's preview the button
+            styles in the below examples.
         </p>
 
         <h2>Solid Buttons</h2>
@@ -299,4 +327,4 @@
         </p>
         <Repl value={examples.events.click} />
     </article>
-</main>
+</Layout>

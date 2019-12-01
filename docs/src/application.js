@@ -24,6 +24,7 @@ window.Router = (application_routes) => {
             window.route_component = null;
         }
 
+        if (document.body.innerHTML) document.body.innerHTML = "";
         window.route_component = router(hash);
     }
 
@@ -46,6 +47,8 @@ window.addEventListener("load", () => {
     // Re-export for tinkering
     window.router = Router({
         "": require("./routes/index.svelte").default,
-        "elements/button": require("./routes/elements/button.svelte").default
+        test: require("./routes/test.svelte").default,
+        "framework/elements": require("./routes/framework/elements/index.svelte").default,
+        "framework/elements/button": require("./routes/framework/elements/button.svelte").default
     });
 });

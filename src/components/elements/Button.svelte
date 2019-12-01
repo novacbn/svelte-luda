@@ -1,4 +1,5 @@
 <script context="module">
+    import {select_prefix} from "../../util/guards";
     import {COLOR_NAMES, SIZE_NAMES} from "../../util/luda";
 
     /**
@@ -30,7 +31,6 @@
 </script>
 
 <script>
-    import {select_prefix} from "../../util/guards";
     import {parse_utility} from "../../util/luda";
 
     let _class = "";
@@ -74,10 +74,10 @@
     <div
         class="btn-check {active_class}
         {color_class}
-        {_class}
         {fluid_class}
         {size_class}
-        {parse_utility($$props)}"
+        {parse_utility($$props)}
+        {_class}"
         {...disabled ? {disabled: ''} : {}}
         {...readonly ? {readonly: ''} : {}}>
         <input type="checkbox" {id} {name} {readonly} {value} bind:checked={active} />
@@ -90,10 +90,10 @@
     <div
         class="btn-file {active_class}
         {color_class}
-        {_class}
         {fluid_class}
         {size_class}
-        {parse_utility($$props)}"
+        {parse_utility($$props)}
+        {_class}"
         {...disabled ? {disabled: ''} : {}}>
         <input type="file" {disabled} {id} {multiple} {name} />
 
@@ -105,10 +105,10 @@
     <div
         class="btn-radio {active_class}
         {color_class}
-        {_class}
         {fluid_class}
         {size_class}
-        {parse_utility($$props)}"
+        {parse_utility($$props)}
+        {_class}"
         {...disabled ? {disabled: ''} : {}}
         {...readonly ? {readonly: ''} : {}}>
         <input type="radio" {disabled} {id} {name} {readonly} {value} bind:group={active} />
@@ -121,11 +121,11 @@
     <a
         class="btn {active_class}
         {color_class}
-        {_class}
         {fluid_class}
         {size_class}
-        {parse_utility($$props)}"
-        {disabled}
+        {parse_utility($$props)}
+        {_class}"
+        {...disabled ? {disabled: ''} : {}}
         {href}
         {id}
         {target}
@@ -137,10 +137,10 @@
     <button
         class="btn {active_class}
         {color_class}
-        {_class}
         {fluid_class}
         {size_class}
-        {parse_utility($$props)}"
+        {parse_utility($$props)}
+        {_class}"
         {disabled}
         {id}
         {style}
