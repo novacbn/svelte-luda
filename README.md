@@ -26,4 +26,4 @@ npm install git+https://github.com/novacbn/svelte-luda
 
 ## Documentation
 
-Visit [novacbn.github.io/svelte-luda](https://novacbn.github.io/svelte-luda) for up-to date documentation of the bindings.
+Visit [luda.nbn.dev](https://luda.nbn.dev) for up-to date documentation of the bindings.
