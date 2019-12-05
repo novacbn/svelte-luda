@@ -2,7 +2,7 @@
     import Repl from "../../../components/Repl.svelte";
     import Layout from "../_layout.svelte";
 
-    import examples from "./_examples.toml";
+    import examples from "./_button.toml";
 </script>
 
 <Layout>

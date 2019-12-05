@@ -28,6 +28,19 @@
             </NavigationItems>
 
             <NavigationItems>
+                <p class="px-small c-light fw-semibold">Base</p>
+                <Button color="light" href="#framework" text>Introduction</Button>
+                <Button color="light" href="#framework/base/code" text>Code</Button>
+                <Button color="light" href="#framework/base/header" text>Header</Button>
+                <Button color="light" href="#framework/base/link" text>Link</Button>
+                <Button color="light" href="#framework/base/list" text>List</Button>
+                <Button color="light" href="#framework/base/pane" text>Pane</Button>
+                <Button color="light" href="#framework/base/paragraph" text>Paragraph</Button>
+                <Button color="light" href="#framework/base/quote" text>Quote</Button>
+                <Button color="light" href="#framework/base/text" text>Text</Button>
+            </NavigationItems>
+
+            <NavigationItems>
                 <p class="px-small c-light fw-semibold">Elements</p>
                 <Button color="light" href="#framework/elements" text>Introduction</Button>
                 <Button color="light" href="#framework/elements/article" text>Article</Button>
@@ -41,7 +54,6 @@
                 <Button color="light" href="#framework/elements/progress" text>Progress</Button>
                 <Button color="light" href="#framework/elements/scrollbar" text>Scrollbar</Button>
                 <Button color="light" href="#framework/elements/table" text>Table</Button>
-                <Button color="light" href="#framework/elements/typography" text>Typgraphy</Button>
             </NavigationItems>
 
             <NavigationItems>
@@ -63,6 +75,7 @@
                 </Button>
                 <Button color="light" href="#framework/patterns/form-group" text>Form Group</Button>
                 <Button color="light" href="#framework/patterns/form-icon" text>Form Icon</Button>
+                <Button color="light" href="#framework/patterns/grid" text>Grid</Button>
                 <Button color="light" href="#framework/patterns/modal" text>Modal</Button>
                 <Button color="light" href="#framework/patterns/navigation" text>Navigation</Button>
                 <Button color="light" href="#framework/patterns/search-bar" text>Search Bar</Button>
@@ -81,7 +94,6 @@
                 <Button color="light" href="#framework/utilities/display" text>Display</Button>
                 <Button color="light" href="#framework/utilities/flex" text>Flex</Button>
                 <Button color="light" href="#framework/utilities/float" text>Float</Button>
-                <Button color="light" href="#framework/utilities/grid" text>Grid</Button>
                 <Button color="light" href="#framework/utilities/opacity" text>Opacity</Button>
                 <Button color="light" href="#framework/utilities/overflow" text>Overflow</Button>
                 <Button color="light" href="#framework/utilities/position" text>Position</Button>

@@ -7,7 +7,7 @@
         <h1 class="fw-semibold">Elements</h1>
         <h3 class="fw-light">
             Elements are basic visible units to create user interfaces. Each element has a specific
-            function, and doesn't rely on other layout composition.
+            function, and doesn't rely on other HTML layout composition.
         </h3>
     </article>
 
@@ -46,9 +46,6 @@
             </li>
             <li>
                 <a href="#framework/elements/table">Table</a>
-            </li>
-            <li>
-                <a href="#framework/elements/typography">Typography</a>
             </li>
         </ul>
     </article>

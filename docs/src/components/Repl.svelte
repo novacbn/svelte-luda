@@ -4,6 +4,7 @@
     import {compile} from "svelte/compiler";
 
     import {
+        append,
         attr,
         create_component,
         destroy_component,
@@ -25,6 +26,7 @@
      *
      */
     const SVELTE_LIB = {
+        append,
         attr,
         create_component,
         destroy_component,

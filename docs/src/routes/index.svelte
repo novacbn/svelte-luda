@@ -10,7 +10,13 @@
     <NavigationMenu>
         <NavigationItems />
         <NavigationItems submenu>
-            <Button color="light" href="https://github.com/novacbn/svelte-luda" text>GitHub</Button>
+            <Button
+                color="light"
+                href="https://github.com/novacbn/svelte-luda"
+                target="_blank"
+                text>
+                GitHub
+            </Button>
         </NavigationItems>
     </NavigationMenu>
 </Navigation>
@@ -26,14 +32,20 @@
             <a class="link-light" href="https://oatw.github.io/luda">Luda</a>
             CSS framework,
             <br class="d-none d-block-m" />
-            {@html `that's cybernetically enhanced by the <a class="link-light" href="https://svelte.dev" target="_blank">Svelte</a>!`}
+            {@html `that's cybernetically enhanced by <a class="link-light" href="https://svelte.dev" target="_blank">Svelte</a>!`}
         </p>
+
+        <div class="col-12">
+            <pre class="p-small">
+                <code class="px-small py-tiny">
+                    $ npm install git+https://github.com/novacbn/svelte-luda
+                </code>
+            </pre>
+        </div>
 
         <p class="col-12 px-small">
             <Button color="primary" size="large" href="#framework">Getting Started</Button>
-            <Button color="light" size="large" href="#framework/installation" hollow>
-                Installation
-            </Button>
+            <Button color="light" size="large" href="#scratchpad" hollow>Scratchpad</Button>
         </p>
     </article>
 

@@ -48,7 +48,16 @@ window.addEventListener("load", () => {
     window.router = Router({
         "": require("./routes/index.svelte").default,
         test: require("./routes/test.svelte").default,
+
+        /**
+         * framework/elements
+         */
         "framework/elements": require("./routes/framework/elements/index.svelte").default,
-        "framework/elements/button": require("./routes/framework/elements/button.svelte").default
+        "framework/elements/button": require("./routes/framework/elements/button.svelte").default,
+
+        /**
+         * framework/utilities
+         */
+        "framework/utilities/background": require("./routes/framework/utilities/background.svelte").default
     });
 });

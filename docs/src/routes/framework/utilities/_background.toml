@@ -1,0 +1,122 @@
+[color]
+    grid = """<style>
+    :global(.docs-background-color-example > div > div) {
+        border: 1px black solid;
+        height: 4rem;
+    }
+</style>
+
+<div class="grid ta-center docs-background-color-example">
+    <div class="col-4">
+        <div class="bc-primary"></div>
+        <small>bc-primary</small>
+    </div>
+
+    <div class="col-4">
+        <div class="bc-secondary"></div>
+        <small>bc-secondary</small>
+    </div>
+
+    <div class="col-4">
+        <div class="bc-danger"></div>
+        <small>bc-danger</small>
+    </div>
+
+    <div class="col-4">
+        <div class="bc-dark"></div>
+        <small>bc-dark</small>
+    </div>
+
+    <div class="col-4">
+        <div class="bc-light"></div>
+        <small>bc-light</small>
+    </div>
+
+    <div class="col-4">
+        <div class="bc-emphasis"></div>
+        <small>bc-emphasis</small>
+    </div>
+
+    <div class="col-4">
+        <div class="bc-main"></div>
+        <small>bc-main</small>
+    </div>
+
+    <div class="col-4">
+        <div class="bc-muted"></div>
+        <small>bc-muted</small>
+    </div>
+
+    <div class="col-4">
+        <div class="bc-inverse-emphasis"></div>
+        <small>bc-inverse-emphasis</small>
+    </div>
+
+    <div class="col-4">
+        <div class="bc-inverse-main"></div>
+        <small>bc-inverse-main</small>
+    </div>
+
+    <div class="col-4">
+        <div class="bc-inverse-muted"></div>
+        <small>bc-inverse-muted</small>
+    </div>
+
+    <div class="col-4">
+        <div class="bc-none"></div>
+        <small>bc-none *</small>
+    </div>
+</div>"""
+
+[image]
+    grid = """<style>
+    :global(.docs-background-image-example > div > div) {
+        border: 1px black solid;
+        background-image: url("/assets/images/carousel-1.jpg");
+        background-size: cover;
+        height: 4rem;
+    }
+</style>
+
+<div class="grid ta-center docs-background-image-example">
+    <div class="col-4">
+        <div class="bi-none"></div>
+        bi-none *
+    </div>
+</div>"""
+
+[size]
+    grid = """<style>
+    :global(.docs-background-size-example > div > div) {
+        border: 1px black solid;
+        background-image: url("/assets/images/carousel-1.jpg");
+        height: 4rem;
+    }
+</style>
+
+<div class="grid ta-center docs-background-size-example">
+    <div class="col-4">
+        <div class="bs-cover"></div>
+        bs-cover
+    </div>
+
+    <div class="col-4">
+        <div class="bs-contain"></div>
+        bs-contain
+    </div>
+
+    <div class="col-4">
+        <div class="bs-auto"></div>
+        bs-auto
+    </div>
+
+    <div class="col-4">
+        <div class="bs-100-auto"></div>
+        bs-100-auto
+    </div>
+
+    <div class="col-4">
+        <div class="bs-auto-100"></div>
+        bs-auto-100
+    </div>
+</div>"""
