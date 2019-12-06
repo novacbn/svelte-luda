@@ -1,5 +1,5 @@
 <script context="module">
-    import {select_prefix} from "../../../util/guards";
+    import {select_format} from "../../../util/guards";
     import {ALIGN_ITEMS_NAMES, JUSTIFY_CONTENT_NAMES, SCREEN_SHORT_NAMES} from "../../../util/luda";
 
     /**
@@ -22,34 +22,30 @@
         JUSTIFY_CONTENT_NAMES.start
     ];
 
-    const align_guard = select_prefix("Grid.align", "ai-", "", GRID_ALIGN_NAMES, true);
-    const align_medium_guard = select_prefix(
+    const align_guard = select_format("Grid.align", "ai-%s", GRID_ALIGN_NAMES, true);
+    const align_medium_guard = select_format(
         "Grid.align_m",
-        "ai-",
-        SCREEN_SHORT_NAMES.medium,
+        "ai-%s-" + SCREEN_SHORT_NAMES.medium,
         GRID_ALIGN_NAMES,
         true
     );
-    const align_large_guard = select_prefix(
+    const align_large_guard = select_format(
         "Grid.align_l",
-        "ai-",
-        SCREEN_SHORT_NAMES.large,
+        "ai-%s-" + SCREEN_SHORT_NAMES.large,
         GRID_ALIGN_NAMES,
         true
     );
 
-    const justify_guard = select_prefix("Grid.justify", "jc-", "", GRID_JUSTIFY_NAMES, true);
-    const justify_medium_guard = select_prefix(
+    const justify_guard = select_format("Grid.justify", "jc-", "", GRID_JUSTIFY_NAMES, true);
+    const justify_medium_guard = select_format(
         "Grid.justify_m",
-        "jc-",
-        SCREEN_SHORT_NAMES.medium,
+        "jc-%s-" + SCREEN_SHORT_NAMES.medium,
         GRID_JUSTIFY_NAMES,
         true
     );
-    const justify_large_guard = select_prefix(
+    const justify_large_guard = select_format(
         "Grid.justify_l",
-        "jc-",
-        SCREEN_SHORT_NAMES.large,
+        "jc-%s-" + SCREEN_SHORT_NAMES.large,
         GRID_JUSTIFY_NAMES,
         true
     );
@@ -75,6 +71,8 @@
 
     $: grid_class = edge ? "grid-edge" : "grid";
 
+    // NOTE: I know this all looks ugly, but currently is the way I see
+    // on how to manage screen breaks and such
     $: align_class = align ? align_guard(align) : "";
     $: align_m_class = align_m ? align_guard(align_m) : "";
     $: align_l_class = align_l ? align_guard(align_l) : "";

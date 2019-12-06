@@ -1,5 +1,5 @@
 <script context="module">
-    import {select_prefix} from "../../util/guards";
+    import {select_format} from "../../util/guards";
     import {COLOR_NAMES, SIZE_NAMES} from "../../util/luda";
 
     /**
@@ -18,23 +18,16 @@
      */
     export const BUTTON_SIZE_NAMES = [SIZE_NAMES.large, SIZE_NAMES.small];
 
-    const color_guard = select_prefix("Button.color", "btn-", "", BUTTON_COLOR_NAMES, true);
-    const color_text_guard = select_prefix(
+    const color_guard = select_format("Button.color", "btn-%s", BUTTON_COLOR_NAMES, true);
+    const color_text_guard = select_format("Button.color", "btn-text-%s", BUTTON_COLOR_NAMES, true);
+    const color_hollow_guard = select_format(
         "Button.color",
-        "btn-text-",
-        "",
-        BUTTON_COLOR_NAMES,
-        true
-    );
-    const color_hollow_guard = select_prefix(
-        "Button.color",
-        "btn-hollow-",
-        "",
+        "btn-hollow-%s",
         BUTTON_COLOR_NAMES,
         true
     );
 
-    const size_guard = select_prefix("Button.size", "btn-", "", BUTTON_SIZE_NAMES, true);
+    const size_guard = select_format("Button.size", "btn-%s", BUTTON_SIZE_NAMES, true);
 </script>
 
 <script>

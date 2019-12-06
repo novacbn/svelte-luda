@@ -48,6 +48,7 @@ export const JUSTIFY_CONTENT_NAMES = {
  * Represents the amount of points to grid-related Luda classes and utilities
  */
 export const GRID_POINTS = {
+    auto: "auto",
     one: "1",
     two: "2",
     three: "3",

@@ -1,5 +1,5 @@
 <script context="module">
-    import {select_prefix} from "../../../util/guards";
+    import {select_format} from "../../../util/guards";
     import {COLOR_NAMES} from "../../../util/luda";
 
     /**
@@ -13,10 +13,9 @@
         COLOR_NAMES.secondary
     ];
 
-    const color_guard = select_prefix(
+    const color_guard = select_format(
         "Button.color",
-        "btn-text-",
-        "",
+        "btn-text-%s",
         NAVIGATION_BUTTON_COLOR_NAMES,
         true
     );

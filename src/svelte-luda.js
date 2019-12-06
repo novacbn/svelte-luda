@@ -52,7 +52,11 @@ export {_GridBreaker as GridBreaker};
 export {_GridItem as GridItem};
 
 export {GRID_ALIGN_NAMES, GRID_JUSTIFY_NAMES} from "./components/patterns/grid/Grid.svelte";
-export {GRID_ITEM_SPAN_NAMES} from "./components/patterns/grid/GridItem.svelte";
+export {
+    GRID_ITEM_OFFSET_NAMES,
+    GRID_ITEM_ORDER_NAMES,
+    GRID_ITEM_SPAN_NAMES
+} from "./components/patterns/grid/GridItem.svelte";
 
 /**
  * Patterns -> Navigation
