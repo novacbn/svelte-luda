@@ -60,6 +60,8 @@
 
     radio = """<script>
     const {Button} = luda;
+
+    let group;
 </script>
 
 <Button
@@ -69,6 +71,7 @@
     value="yes"
     radio
     hollow
+    bind:group
 >Yes, I agree.</Button>
 
 <Button
@@ -78,6 +81,7 @@
     value="no"
     radio
     hollow
+    bind:group
 >No, I disagree.</Button>"""
 
 [states]
@@ -101,7 +105,7 @@
     id="example6"
     name="example6"
     value="example"
-    active
+    group="example"
     radio
 >Radio Button</Button>
 

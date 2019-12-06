@@ -1,4 +1,22 @@
 /**
+ * Represents the standardized names for `ai-*` alignment Luda classes and utilities
+ */
+export const ALIGN_ITEMS_NAMES = {
+    center: "center",
+    end: "end",
+    start: "start"
+};
+
+/**
+ * Represents the standardized names for `as-*` alignment Luda classes and utilities
+ */
+export const ALIGN_SELF_NAMES = {
+    center: "center",
+    end: "end",
+    start: "start"
+};
+
+/**
  * Represents the standardized color names provided by Luda classes and utilities
  */
 export const COLOR_NAMES = {
@@ -13,6 +31,43 @@ export const COLOR_NAMES = {
     muted: "muted",
     primary: "primary",
     secondary: "secondary"
+};
+
+/**
+ * Represents the standardized names for `jc-*` justification Luda classes and utilities
+ */
+export const JUSTIFY_CONTENT_NAMES = {
+    around: "around",
+    between: "between",
+    center: "center",
+    end: "end",
+    start: "start"
+};
+
+/**
+ * Represents the amount of points to grid-related Luda classes and utilities
+ */
+export const GRID_POINTS = {
+    one: "1",
+    two: "2",
+    three: "3",
+    four: "4",
+    five: "5",
+    six: "6",
+    seven: "7",
+    eight: "8",
+    nine: "9",
+    ten: "10",
+    eleven: "11",
+    twelve: "12"
+};
+
+/**
+ * Represents the standardized shortened screen break names provided by Luda classes and utilities
+ */
+export const SCREEN_SHORT_NAMES = {
+    medium: "m",
+    large: "l"
 };
 
 /**
@@ -79,7 +134,53 @@ export const UTILITY_CLASS_NAMES = {
     c_main: "c-main",
     c_muted: "c-muted",
     c_primary: "c-primary",
-    c_secondary: "c-secondary"
+    c_secondary: "c-secondary",
+
+    /**
+     * `fs-*` font style utility classes
+     */
+
+    fs_italic: "fs-italic",
+    fs_normal: "fs-normal",
+
+    /**
+     * `fw-*` font weight utility classes
+     */
+
+    fw_lightest: "fw-lightest",
+    fw_lighter: "fw-lighter",
+    fw_light: "fw-light",
+    fw_regular: "fw-regular",
+    fw_medium: "fw-medium",
+    fw_semibold: "fw-semibold",
+    fw_bold: "fw-bold",
+    fw_bolder: "fw-bolder",
+    fw_boldest: "fw-boldest",
+
+    /**
+     * `ta-*` text alignment utility classes
+     */
+
+    ta_center: "ta-center",
+    ta_justify: "ta-justify",
+    ta_left: "ta-left",
+    ta_right: "ta-right",
+
+    /**
+     * `td-*` text decoration utility classes
+     */
+
+    td_none: "td-none",
+    td_stroke: "td-stroke",
+    td_underline: "td-underline",
+
+    /**
+     * `tt-*` text transformation utility classes
+     */
+
+    tt_cap: "tt-cap",
+    tt_lower: "tt-lower",
+    tt_upper: "tt-upper"
 };
 
 /**

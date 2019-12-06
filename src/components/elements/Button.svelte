@@ -18,16 +18,23 @@
      */
     export const BUTTON_SIZE_NAMES = [SIZE_NAMES.large, SIZE_NAMES.small];
 
-    const color_guard = select_prefix("Button.color", "btn-", BUTTON_COLOR_NAMES, true);
-    const color_text_guard = select_prefix("Button.color", "btn-text-", BUTTON_COLOR_NAMES, true);
+    const color_guard = select_prefix("Button.color", "btn-", "", BUTTON_COLOR_NAMES, true);
+    const color_text_guard = select_prefix(
+        "Button.color",
+        "btn-text-",
+        "",
+        BUTTON_COLOR_NAMES,
+        true
+    );
     const color_hollow_guard = select_prefix(
         "Button.color",
         "btn-hollow-",
+        "",
         BUTTON_COLOR_NAMES,
         true
     );
 
-    const size_guard = select_prefix("Button.size", "btn-", BUTTON_SIZE_NAMES, true);
+    const size_guard = select_prefix("Button.size", "btn-", "", BUTTON_SIZE_NAMES, true);
 </script>
 
 <script>
@@ -43,6 +50,7 @@
     export let href = "";
     export let hollow = false;
     export let fluid = false;
+    export let group = undefined;
     export let readonly = false;
     export let size = "";
     export let target = "";
@@ -61,6 +69,8 @@
     $: active_class = active ? "btn-active" : "";
     $: fluid_class = fluid ? "btn-fluid" : "";
     $: size_class = size ? size_guard(size) : "";
+
+    $: if (radio) active = group === value;
 
     let color_class = "";
     $: {
@@ -111,7 +121,7 @@
         {_class}"
         {...disabled ? {disabled: ''} : {}}
         {...readonly ? {readonly: ''} : {}}>
-        <input type="radio" {disabled} {id} {name} {readonly} {value} bind:group={active} />
+        <input type="radio" {disabled} {id} {name} {readonly} {value} bind:group />
 
         <label for={id}>
             <slot />

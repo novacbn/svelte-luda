@@ -1,4 +1,6 @@
 <script>
+    const {Article} = window.luda;
+
     import Repl from "../../../components/Repl.svelte";
     import Layout from "../_layout.svelte";
 
@@ -6,7 +8,7 @@
 </script>
 
 <Layout>
-    <article class="article">
+    <Article>
         <h1 class="fw-semibold">Button</h1>
         <h3 class="fw-light">
             Buttons are simple blocky elements that be clicked to active internal application
@@ -31,9 +33,9 @@
         <pre>
             <code>const {'{Button}'} = window.luda;</code>
         </pre>
-    </article>
+    </Article>
 
-    <article class="article">
+    <Article>
         <h1>Button Styles</h1>
         <p>
             A button can be created by using the
@@ -75,9 +77,9 @@
             property to create text styled buttons.
         </p>
         <Repl value={examples.styles.text} />
-    </article>
+    </Article>
 
-    <article class="article">
+    <Article>
         <h1>Button Tags</h1>
         <small class="d-block">
             <code>type Button.href = string;</code>
@@ -90,9 +92,9 @@
             property.
         </p>
         <Repl value={examples.tags.href} />
-    </article>
+    </Article>
 
-    <article class="article">
+    <Article>
         <h1>Functional Buttons</h1>
         <p>Luda offers some functional buttons, let's have a look at what they can do.</p>
 
@@ -132,6 +134,9 @@
                 <code>type Button.radio = boolean;</code>
             </pre>
             <pre>
+                <code>type Button.group = string;</code>
+            </pre>
+            <pre>
                 <code>type Button.id = string;</code>
             </pre>
             <pre>
@@ -152,7 +157,7 @@
             <code>Button</code>
             is very simple to create, just toggle the
             <code>Button.radio</code>
-            property.
+            property. Make sure to also bind <code>Button.group</code> to the same reference for multiple <code>Button</code>s to work.
         </p>
         <Repl value={examples.functional.radio} />
 
@@ -180,9 +185,9 @@
             s. Let's go straight to the below examples.
         </p>
         <Repl value={examples.functional.file} />
-    </article>
+    </Article>
 
-    <article class="article">
+    <Article>
         <h1>Button States</h1>
         <p>
             Button states can be controlled through the relavent
@@ -204,7 +209,7 @@
             , you can see the effect in the below examples.
         </p>
         <p>
-            Also note, whenever a checkbox or radio
+            Also note, whenever a checkbox
             <code>Button</code>
             was selected by the user,
             <code>Button.active</code>
@@ -213,6 +218,17 @@
             . Like-wise, if you set
             <code>Button.active</code>
             , it will reflect the in the form state.
+        </p>
+        <p>
+            Finally note, to activate a radio
+            <code>Button</code>
+            , you need to set
+            <code>Button.group</code>
+            to
+            {@html `<code>Button.value</code>.`}
+            Since radio
+            <code>Buttons</code>
+            share the same single reference.
         </p>
         <Repl value={examples.states.active} />
 
@@ -246,9 +262,9 @@
             .
         </p>
         <Repl value={examples.states.readonly} />
-    </article>
+    </Article>
 
-    <article class="article">
+    <Article>
         <h1>Size Modifiers</h1>
         <p>
             If you want to change the size of a
@@ -300,9 +316,9 @@
             property with this property.
         </p>
         <Repl value={examples.sizes.fluid} />
-    </article>
+    </Article>
 
-    <article class="article">
+    <Article>
         <h1>Event Listeners</h1>
         <p>
             Like other
@@ -326,5 +342,5 @@
             .
         </p>
         <Repl value={examples.events.click} />
-    </article>
+    </Article>
 </Layout>

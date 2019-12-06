@@ -1,75 +1,83 @@
 [color]
-    grid = """<style>
+    grid = """<script>
+    const {Grid, GridItem, Pane} = window.luda;
+</script>
+
+<style>
     :global(.docs-background-color-example > div > div) {
         border: 1px black solid;
         height: 4rem;
     }
 </style>
 
-<div class="grid ta-center docs-background-color-example">
-    <div class="col-4">
-        <div class="bc-primary"></div>
+<Grid class="docs-background-color-example" ta-center>
+    <GridItem span="4">
+        <Pane bc-primary />
         <small>bc-primary</small>
-    </div>
+    </GridItem>
 
-    <div class="col-4">
-        <div class="bc-secondary"></div>
+    <GridItem span="4">
+        <Pane bc-secondary />
         <small>bc-secondary</small>
-    </div>
+    </GridItem>
 
-    <div class="col-4">
-        <div class="bc-danger"></div>
+    <GridItem span="4">
+        <Pane bc-danger />
         <small>bc-danger</small>
-    </div>
+    </GridItem>
 
-    <div class="col-4">
-        <div class="bc-dark"></div>
+    <GridItem span="4">
+        <Pane bc-dark />
         <small>bc-dark</small>
-    </div>
+    </GridItem>
 
-    <div class="col-4">
-        <div class="bc-light"></div>
+    <GridItem span="4">
+        <Pane bc-light />
         <small>bc-light</small>
-    </div>
+    </GridItem>
 
-    <div class="col-4">
-        <div class="bc-emphasis"></div>
+    <GridItem span="4">
+        <Pane bc-emphasis />
         <small>bc-emphasis</small>
-    </div>
+    </GridItem>
 
-    <div class="col-4">
-        <div class="bc-main"></div>
+    <GridItem span="4">
+        <Pane bc-main />
         <small>bc-main</small>
-    </div>
+    </GridItem>
 
-    <div class="col-4">
-        <div class="bc-muted"></div>
+    <GridItem span="4">
+        <Pane bc-muted />
         <small>bc-muted</small>
-    </div>
+    </GridItem>
 
-    <div class="col-4">
-        <div class="bc-inverse-emphasis"></div>
+    <GridItem span="4">
+        <Pane bc-inverse-emphasis />
         <small>bc-inverse-emphasis</small>
-    </div>
+    </GridItem>
 
-    <div class="col-4">
-        <div class="bc-inverse-main"></div>
+    <GridItem span="4">
+        <Pane bc-inverse-main />
         <small>bc-inverse-main</small>
-    </div>
+    </GridItem>
 
-    <div class="col-4">
-        <div class="bc-inverse-muted"></div>
+    <GridItem span="4">
+        <Pane bc-inverse-muted />
         <small>bc-inverse-muted</small>
-    </div>
+    </GridItem>
 
-    <div class="col-4">
-        <div class="bc-none"></div>
+    <GridItem span="4">
+        <Pane bc-none />
         <small>bc-none *</small>
-    </div>
-</div>"""
+    </GridItem>
+</Grid>"""
 
 [image]
-    grid = """<style>
+    grid = """<script>
+    const {Grid, GridItem, Pane} = window.luda;
+</script>
+
+<style>
     :global(.docs-background-image-example > div > div) {
         border: 1px black solid;
         background-image: url("/assets/images/carousel-1.jpg");
@@ -78,15 +86,19 @@
     }
 </style>
 
-<div class="grid ta-center docs-background-image-example">
-    <div class="col-4">
-        <div class="bi-none"></div>
+<Grid class="docs-background-image-example" ta-center>
+    <GridItem span="4">
+        <Pane bi-none />
         bi-none *
-    </div>
-</div>"""
+    </GridItem>
+</Grid>"""
 
 [size]
-    grid = """<style>
+    grid = """<script>
+    const {Grid, GridItem, Pane} = window.luda;
+</script>
+
+<style>
     :global(.docs-background-size-example > div > div) {
         border: 1px black solid;
         background-image: url("/assets/images/carousel-1.jpg");
@@ -94,29 +106,29 @@
     }
 </style>
 
-<div class="grid ta-center docs-background-size-example">
-    <div class="col-4">
-        <div class="bs-cover"></div>
+<Grid class="docs-background-size-example" ta-center>
+    <GridItem span="4">
+        <Pane bs-cover />
         bs-cover
-    </div>
+    </GridItem>
 
-    <div class="col-4">
-        <div class="bs-contain"></div>
+    <GridItem span="4">
+        <Pane bs-contain />
         bs-contain
-    </div>
+    </GridItem>
 
-    <div class="col-4">
-        <div class="bs-auto"></div>
+    <GridItem span="4">
+        <Pane bs-auto />
         bs-auto
-    </div>
+    </GridItem>
 
-    <div class="col-4">
-        <div class="bs-100-auto"></div>
+    <GridItem span="4">
+        <Pane bs-100-auto />
         bs-100-auto
-    </div>
+    </GridItem>
 
-    <div class="col-4">
-        <div class="bs-auto-100"></div>
+    <GridItem span="4">
+        <Pane bs-auto-100 />
         bs-auto-100
-    </div>
-</div>"""
+    </GridItem>
+</Grid>"""

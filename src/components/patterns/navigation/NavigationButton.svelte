@@ -16,6 +16,7 @@
     const color_guard = select_prefix(
         "Button.color",
         "btn-text-",
+        "",
         NAVIGATION_BUTTON_COLOR_NAMES,
         true
     );

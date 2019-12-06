@@ -7,6 +7,6 @@
     export {_class as class};
 </script>
 
-<article class="article {parse_utility($$props)} {_class}" {style}>
+<div class="{parse_utility($$props)} {_class}" {style}>
     <slot />
-</article>
+</div>

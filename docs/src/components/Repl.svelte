@@ -3,46 +3,7 @@
 
     import {compile} from "svelte/compiler";
 
-    import {
-        append,
-        attr,
-        create_component,
-        destroy_component,
-        detach,
-        element,
-        init,
-        insert,
-        mount_component,
-        safe_not_equal,
-        set_data,
-        space,
-        text,
-        transition_in,
-        transition_out,
-        SvelteComponent
-    } from "svelte/internal";
-
-    /**
-     *
-     */
-    const SVELTE_LIB = {
-        append,
-        attr,
-        create_component,
-        destroy_component,
-        detach,
-        element,
-        init,
-        insert,
-        mount_component,
-        safe_not_equal,
-        set_data,
-        space,
-        text,
-        transition_in,
-        transition_out,
-        SvelteComponent
-    };
+    import * as svelte from "svelte/internal";
 
     /**
      *
@@ -117,7 +78,7 @@ ${code}
         const javascript = format_output(output);
 
         //console.log({javascript});
-        return eval(javascript)(window, SVELTE_LIB);
+        return eval(javascript)(window, svelte);
     }
 </script>
 
