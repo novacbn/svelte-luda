@@ -50,6 +50,11 @@ window.addEventListener("load", () => {
         test: require("./routes/test.svelte").default,
 
         /**
+         * framework/base
+         */
+        "framework/base/table": require("./routes/framework/base/table.svelte").default,
+
+        /**
          * framework/elements
          */
         "framework/elements": require("./routes/framework/elements/index.svelte").default,
@@ -58,6 +63,7 @@ window.addEventListener("load", () => {
         /**
          * framework/utilities
          */
-        "framework/utilities/background": require("./routes/framework/utilities/background.svelte").default
+        "framework/utilities/background": require("./routes/framework/utilities/background.svelte").default,
+        "framework/utilities/color": require("./routes/framework/utilities/color.svelte").default
     });
 });

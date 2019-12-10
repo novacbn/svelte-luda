@@ -1,0 +1,72 @@
+[color]
+    grid = """<script>
+    const {Grid, GridItem, Pane} = window.luda;
+</script>
+
+<Grid class="docs-background-color-example" ta-center>
+    <GridItem span="4">
+        <Pane fw-semibold c-primary>
+            <small>c-primary</small>
+        </Pane>
+    </GridItem>
+
+    <GridItem span="4">
+        <Pane fw-semibold c-secondary>
+            <small>c-secondary</small>
+        </Pane>
+    </GridItem>
+
+    <GridItem span="4">
+        <Pane fw-semibold c-danger>
+            <small>c-danger</small>
+        </Pane>
+    </GridItem>
+
+    <GridItem span="4">
+        <Pane fw-semibold c-dark>
+            <small>c-dark</small>
+        </Pane>
+    </GridItem>
+
+    <GridItem span="4">
+        <Pane fw-semibold bc-dark c-light>
+            <small>c-light</small>
+        </Pane>
+    </GridItem>
+
+    <GridItem span="4">
+        <Pane fw-semibold c-emphasis>
+            <small>c-emphasis</small>
+        </Pane>
+    </GridItem>
+
+    <GridItem span="4">
+        <Pane fw-semibold c-main>
+            <small>c-main</small>
+        </Pane>
+    </GridItem>
+
+    <GridItem span="4">
+        <Pane fw-semibold c-muted>
+            <small>c-muted</small>
+        </Pane>
+    </GridItem>
+
+    <GridItem span="4">
+        <Pane fw-semibold bc-inverse-main c-inverse-emphasis>
+            <small>c-inverse-emphasis</small>
+        </Pane>
+    </GridItem>
+
+    <GridItem span="4">
+        <Pane fw-semibold bc-inverse-main c-inverse-main>
+            <small>c-inverse-main</small>
+        </Pane>
+    </GridItem>
+
+    <GridItem span="4">
+        <Pane fw-semibold bc-inverse-main c-inverse-muted>
+            <small>c-inverse-muted</small>
+        </Pane>
+    </GridItem>
+</Grid>"""

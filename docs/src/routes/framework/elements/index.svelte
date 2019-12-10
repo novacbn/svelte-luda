@@ -1,17 +1,19 @@
 <script>
+    const {Article} = window.luda;
+
     import Layout from "../_layout.svelte";
 </script>
 
 <Layout>
-    <article class="article">
+    <Article>
         <h1 class="fw-semibold">Elements</h1>
         <h3 class="fw-light">
             Elements are basic visible units to create user interfaces. Each element has a specific
             function, and doesn't rely on other HTML layout composition.
         </h3>
-    </article>
+    </Article>
 
-    <article class="article">
+    <Article>
         <h1>Framework Elements</h1>
         <ul class="px-medium h4">
             <li>
@@ -44,9 +46,6 @@
             <li>
                 <a href="#framework/elements/scrollbar">Scrollbar</a>
             </li>
-            <li>
-                <a href="#framework/elements/table">Table</a>
-            </li>
         </ul>
-    </article>
+    </Article>
 </Layout>

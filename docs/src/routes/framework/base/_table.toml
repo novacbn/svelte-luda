@@ -1,0 +1,271 @@
+[modifiers]
+    hover = """<script>
+    const {Table} = window.luda;
+</script>
+
+<Table hover stripes>
+    <thead>
+        <tr>
+            <th>Company</th>
+            <th>Founded</th>
+            <th>Founders</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>Google</td>
+            <td>September 4, 1998</td>
+            <td>Larry Page, Sergey Brin</td>
+            <td>Menlo Park, California, United States</td>
+        </tr>
+
+        <tr>
+            <td>Facebook</td>
+            <td>February 2004</td>
+            <td>Mark Zuckerberg, Eduardo Saverin...</td>
+            <td>Cambridge, Massachusetts, United States</td>
+        </tr>
+
+        <tr>
+            <td>GitHub</td>
+            <td>2008</td>
+            <td>Tom Preston-Werner</td>
+            <td>San Francisco, California, United States</td>
+        </tr>
+
+        <tr>
+            <td>Airbnb</td>
+            <td>August 2008</td>
+            <td>Brian Chesky, Joe Gebbia, Nathan Blecharczyk</td>
+            <td>San Francisco, California</td>
+        </tr>
+    </tbody>
+</Table>"""
+
+    nowrap = """<script>
+    const {Table} = window.luda;
+</script>
+
+<Table nowrap stripes>
+    <thead>
+        <tr>
+            <th>Company</th>
+            <th>Founded</th>
+            <th>Founders</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>Google</td>
+            <td>September 4, 1998</td>
+            <td>Larry Page, Sergey Brin</td>
+            <td>Menlo Park, California, United States</td>
+        </tr>
+
+        <tr>
+            <td>Facebook</td>
+            <td>February 2004</td>
+            <td>Mark Zuckerberg, Eduardo Saverin...</td>
+            <td>Cambridge, Massachusetts, United States</td>
+        </tr>
+
+        <tr>
+            <td>GitHub</td>
+            <td>2008</td>
+            <td>Tom Preston-Werner</td>
+            <td>San Francisco, California, United States</td>
+        </tr>
+
+        <tr>
+            <td>Airbnb</td>
+            <td>August 2008</td>
+            <td>Brian Chesky, Joe Gebbia, Nathan Blecharczyk</td>
+            <td>San Francisco, California</td>
+        </tr>
+    </tbody>
+</Table>"""
+
+[styles]
+    all = """<script>
+    const {Table} = window.luda;
+</script>
+
+<Table border stripes>
+    <thead>
+        <tr>
+            <th>Company</th>
+            <th>Founded</th>
+            <th>Founders</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>Google</td>
+            <td>September 4, 1998</td>
+            <td>Larry Page, Sergey Brin</td>
+            <td>Menlo Park, California, United States</td>
+        </tr>
+
+        <tr>
+            <td>Facebook</td>
+            <td>February 2004</td>
+            <td>Mark Zuckerberg, Eduardo Saverin...</td>
+            <td>Cambridge, Massachusetts, United States</td>
+        </tr>
+
+        <tr>
+            <td>GitHub</td>
+            <td>2008</td>
+            <td>Tom Preston-Werner</td>
+            <td>San Francisco, California, United States</td>
+        </tr>
+
+        <tr>
+            <td>Airbnb</td>
+            <td>August 2008</td>
+            <td>Brian Chesky, Joe Gebbia, Nathan Blecharczyk</td>
+            <td>San Francisco, California</td>
+        </tr>
+    </tbody>
+</Table>"""
+
+    bordered = """<script>
+    const {Table} = window.luda;
+</script>
+
+<Table border>
+    <thead>
+        <tr>
+            <th>Company</th>
+            <th>Founded</th>
+            <th>Founders</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>Google</td>
+            <td>September 4, 1998</td>
+            <td>Larry Page, Sergey Brin</td>
+            <td>Menlo Park, California, United States</td>
+        </tr>
+
+        <tr>
+            <td>Facebook</td>
+            <td>February 2004</td>
+            <td>Mark Zuckerberg, Eduardo Saverin...</td>
+            <td>Cambridge, Massachusetts, United States</td>
+        </tr>
+
+        <tr>
+            <td>GitHub</td>
+            <td>2008</td>
+            <td>Tom Preston-Werner</td>
+            <td>San Francisco, California, United States</td>
+        </tr>
+
+        <tr>
+            <td>Airbnb</td>
+            <td>August 2008</td>
+            <td>Brian Chesky, Joe Gebbia, Nathan Blecharczyk</td>
+            <td>San Francisco, California</td>
+        </tr>
+    </tbody>
+</Table>"""
+
+    plain = """<script>
+    const {Table} = window.luda;
+</script>
+
+<Table>
+    <thead>
+        <tr>
+            <th>Company</th>
+            <th>Founded</th>
+            <th>Founders</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>Google</td>
+            <td>September 4, 1998</td>
+            <td>Larry Page, Sergey Brin</td>
+            <td>Menlo Park, California, United States</td>
+        </tr>
+
+        <tr>
+            <td>Facebook</td>
+            <td>February 2004</td>
+            <td>Mark Zuckerberg, Eduardo Saverin...</td>
+            <td>Cambridge, Massachusetts, United States</td>
+        </tr>
+
+        <tr>
+            <td>GitHub</td>
+            <td>2008</td>
+            <td>Tom Preston-Werner</td>
+            <td>San Francisco, California, United States</td>
+        </tr>
+
+        <tr>
+            <td>Airbnb</td>
+            <td>August 2008</td>
+            <td>Brian Chesky, Joe Gebbia, Nathan Blecharczyk</td>
+            <td>San Francisco, California</td>
+        </tr>
+    </tbody>
+</Table>"""
+
+    striped = """<script>
+    const {Table} = window.luda;
+</script>
+
+<Table stripes>
+    <thead>
+        <tr>
+            <th>Company</th>
+            <th>Founded</th>
+            <th>Founders</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>Google</td>
+            <td>September 4, 1998</td>
+            <td>Larry Page, Sergey Brin</td>
+            <td>Menlo Park, California, United States</td>
+        </tr>
+
+        <tr>
+            <td>Facebook</td>
+            <td>February 2004</td>
+            <td>Mark Zuckerberg, Eduardo Saverin...</td>
+            <td>Cambridge, Massachusetts, United States</td>
+        </tr>
+
+        <tr>
+            <td>GitHub</td>
+            <td>2008</td>
+            <td>Tom Preston-Werner</td>
+            <td>San Francisco, California, United States</td>
+        </tr>
+
+        <tr>
+            <td>Airbnb</td>
+            <td>August 2008</td>
+            <td>Brian Chesky, Joe Gebbia, Nathan Blecharczyk</td>
+            <td>San Francisco, California</td>
+        </tr>
+    </tbody>
+</Table>"""
