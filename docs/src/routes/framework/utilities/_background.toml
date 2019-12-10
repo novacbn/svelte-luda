@@ -93,6 +93,67 @@
     </GridItem>
 </Grid>"""
 
+[position]
+    grid = """<script>
+    const {Grid, GridItem, Pane} = window.luda;
+</script>
+
+<style>
+    :global(.docs-background-position-example > div > div) {
+        border: 1px black solid;
+        background-image: url("/assets/images/carousel-1.jpg");
+        background-size: 4rem;
+        height: 4rem;
+    }
+</style>
+
+<Grid class="docs-background-position-example" ta-center>
+    <GridItem span="4">
+        <Pane bp-c />
+        bp-c
+    </GridItem>
+
+    <GridItem span="4">
+        <Pane bp-rc />
+        bp-rc
+    </GridItem>
+
+    <GridItem span="4">
+        <Pane bp-lc />
+        bp-lc
+    </GridItem>
+
+    <GridItem span="4">
+        <Pane bp-ct />
+        bp-ct
+    </GridItem>
+
+    <GridItem span="4">
+        <Pane bp-cb />
+        bp-cb
+    </GridItem>
+
+    <GridItem span="4">
+        <Pane bp-lt />
+        bp-lt
+    </GridItem>
+
+    <GridItem span="4">
+        <Pane bp-lb />
+        bp-lb
+    </GridItem>
+
+    <GridItem span="4">
+        <Pane bp-rt />
+        bp-rt
+    </GridItem>
+
+    <GridItem span="4">
+        <Pane bp-rb />
+        bp-rb
+    </GridItem>
+</Grid>"""
+
 [size]
     grid = """<script>
     const {Grid, GridItem, Pane} = window.luda;

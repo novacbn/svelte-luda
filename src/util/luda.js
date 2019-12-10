@@ -112,6 +112,20 @@ export const UTILITY_CLASS_NAMES = {
     bi_none: "bi_none",
 
     /**
+     * `bp-*` background position utility classes
+     */
+
+    bp_c: "bp-c",
+    bp_cb: "bp-cb",
+    bp_ct: "bp-ct",
+    bp_lb: "bp-lb",
+    bp_lc: "bp-lc",
+    bp_lt: "bp-lt",
+    bp_rb: "bp-rb",
+    bp_rc: "bp-rc",
+    bp_rt: "bp-rt",
+
+    /**
      * `bs-*` background size utility classes
      */
 

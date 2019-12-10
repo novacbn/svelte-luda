@@ -74,12 +74,12 @@
     // NOTE: I know this all looks ugly, but currently is the way I see
     // on how to manage screen breaks and such
     $: align_class = align ? align_guard(align) : "";
-    $: align_m_class = align_m ? align_guard(align_m) : "";
-    $: align_l_class = align_l ? align_guard(align_l) : "";
+    $: align_m_class = align_m ? align_m_guard(align_m) : "";
+    $: align_l_class = align_l ? align_l_guard(align_l) : "";
 
     $: justify_class = justify ? justify_guard(justify) : "";
-    $: justify_m_class = justify_m ? justify_guard(justify_m) : "";
-    $: justify_l_class = justify_l ? justify_guard(justify_l) : "";
+    $: justify_m_class = justify_m ? justify_m_guard(justify_m) : "";
+    $: justify_l_class = justify_l ? justify_l_guard(justify_l) : "";
 </script>
 
 <div class="{grid_class} {justify_class} {parse_utility($$props)} {_class}" {style}>

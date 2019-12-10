@@ -23,6 +23,14 @@ import _Pane from "./components/base/Pane.svelte";
 export {_Pane as Pane};
 
 /**
+ * Base -> Table
+ */
+
+import _Table from "./components/base/Table.svelte";
+
+export {_Table as Table};
+
+/**
  * Elements -> Article
  */
 
@@ -53,6 +61,7 @@ export {_GridItem as GridItem};
 
 export {GRID_ALIGN_NAMES, GRID_JUSTIFY_NAMES} from "./components/patterns/grid/Grid.svelte";
 export {
+    GRID_ITEM_ALIGN_NAMES,
     GRID_ITEM_OFFSET_NAMES,
     GRID_ITEM_ORDER_NAMES,
     GRID_ITEM_SPAN_NAMES

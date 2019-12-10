@@ -30,6 +30,7 @@
             <NavigationItems>
                 <p class="px-small c-light fw-semibold">Base</p>
                 <Button color="light" href="#framework" text>Introduction</Button>
+                <Button color="light" href="#framework/base/baseline" text>Baseline</Button>
                 <Button color="light" href="#framework/base/code" text>Code</Button>
                 <Button color="light" href="#framework/base/header" text>Header</Button>
                 <Button color="light" href="#framework/base/link" text>Link</Button>
@@ -37,6 +38,8 @@
                 <Button color="light" href="#framework/base/pane" text>Pane</Button>
                 <Button color="light" href="#framework/base/paragraph" text>Paragraph</Button>
                 <Button color="light" href="#framework/base/quote" text>Quote</Button>
+                <Button color="light" href="#framework/base/scrollbar" text>Scrollbar</Button>
+                <Button color="light" href="#framework/base/table" text>Table</Button>
                 <Button color="light" href="#framework/base/text" text>Text</Button>
             </NavigationItems>
 
@@ -52,8 +55,6 @@
                 <Button color="light" href="#framework/elements/media" text>Media</Button>
                 <Button color="light" href="#framework/elements/overlay" text>Overlay</Button>
                 <Button color="light" href="#framework/elements/progress" text>Progress</Button>
-                <Button color="light" href="#framework/elements/scrollbar" text>Scrollbar</Button>
-                <Button color="light" href="#framework/elements/table" text>Table</Button>
             </NavigationItems>
 
             <NavigationItems>

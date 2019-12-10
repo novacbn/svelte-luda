@@ -1,5 +1,5 @@
 <script>
-    const {Article} = window.luda;
+    const {Article, Table} = window.luda;
 
     import Repl from "../../../components/Repl.svelte";
     import Layout from "../_layout.svelte";
@@ -64,5 +64,57 @@
             applied to it.
         </p>
         <Repl value={examples.size.grid} />
+    </Article>
+
+    <Article>
+        <h1>Background Position</h1>
+        <p>
+            Background position utilities are classes for setting the value of the
+            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-position">
+                <code>background-position</code>
+            </a>
+            propery. They are named using the format
+            {@html `<code>bp-{horizontal position}-{vertical-position}</code>.`}
+        </p>
+        <p>
+            We use the first letter of each position word for short, all position abbreviations are
+            listed in the below table.
+        </p>
+        <Table border striped>
+            <thead>
+                <tr>
+                    <th>Abbreviation</th>
+                    <th>Position</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>c</td>
+                    <td>center</td>
+                </tr>
+
+                <tr>
+                    <td>t</td>
+                    <td>top</td>
+                </tr>
+
+                <tr>
+                    <td>r</td>
+                    <td>right</td>
+                </tr>
+
+                <tr>
+                    <td>b</td>
+                    <td>bottom</td>
+                </tr>
+
+                <tr>
+                    <td>l</td>
+                    <td>left</td>
+                </tr>
+            </tbody>
+        </Table>
+        <Repl value={examples.position.grid} />
     </Article>
 </Layout>
