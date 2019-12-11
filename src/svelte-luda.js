@@ -15,6 +15,15 @@ export {
 } from "./util/luda";
 
 /**
+ * Base -> Header
+ */
+
+import _Header from "./components/base/Header.svelte";
+
+export {HEADER_COLOR_NAMES, HEADER_SIZE_VALUES} from "./components/base/Header.svelte";
+export {_Header as Header};
+
+/**
  * Base -> Pane
  */
 
@@ -66,6 +75,22 @@ export {
     GRID_ITEM_ORDER_NAMES,
     GRID_ITEM_SPAN_NAMES
 } from "./components/patterns/grid/GridItem.svelte";
+
+/**
+ * Patterns -> Tabs
+ */
+
+import _Tab from "./components/patterns/tabs/Tab.svelte";
+import _TabIndicators from "./components/patterns/tabs/TabIndicators.svelte";
+import _TabPane from "./components/patterns/tabs/TabPane.svelte";
+import _TabPanes from "./components/patterns/tabs/TabPanes.svelte";
+
+export {_Tab as Tab};
+export {_TabIndicators as TabIndicators};
+export {_TabPane as TabPane};
+export {_TabPanes as TabPanes};
+
+export {TAB_CONTEXT_SYMBOL} from "./components/patterns/tabs/Tab.svelte";
 
 /**
  * Patterns -> Navigation

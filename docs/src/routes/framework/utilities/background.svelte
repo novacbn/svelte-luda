@@ -1,5 +1,5 @@
 <script>
-    const {Article, Table} = window.luda;
+    const {Article, Header, Table} = window.luda;
 
     import Repl from "../../../components/Repl.svelte";
     import Layout from "../_layout.svelte";
@@ -9,15 +9,15 @@
 
 <Layout>
     <Article>
-        <h1 class="fw-semibold">Background</h1>
-        <h3 class="fw-light">
+        <Header fw-semibold>Background</Header>
+        <Header size="3" fw-light>
             Use background utilities to change the background color, background size and background
             poisition of a Component.
-        </h3>
+        </Header>
     </Article>
 
     <Article>
-        <h1>Background Color</h1>
+        <Header>Background Color</Header>
         <p>
             Background color utility properties are usable on any Component supplied by
             <b>svelte-luda</b>
@@ -37,7 +37,7 @@
     </Article>
 
     <Article>
-        <h1>Background Image</h1>
+        <Header>Background Image</Header>
         <p>
             Background image utility properties are for modifying Components that had some form of
             <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-image">
@@ -55,7 +55,7 @@
     </Article>
 
     <Article>
-        <h1>Background Size</h1>
+        <Header>Background Size</Header>
         <p>
             Background image utility properties are for modifying Components that had some form of
             <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-size">
@@ -67,7 +67,7 @@
     </Article>
 
     <Article>
-        <h1>Background Position</h1>
+        <Header>Background Position</Header>
         <p>
             Background position utilities are classes for setting the value of the
             <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-position">

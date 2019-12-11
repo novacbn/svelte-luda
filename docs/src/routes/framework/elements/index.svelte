@@ -1,20 +1,20 @@
 <script>
-    const {Article} = window.luda;
+    const {Article, Header} = window.luda;
 
     import Layout from "../_layout.svelte";
 </script>
 
 <Layout>
     <Article>
-        <h1 class="fw-semibold">Elements</h1>
-        <h3 class="fw-light">
+        <Header fw-semibold>Elements</Header>
+        <Header size="3" fw-light>
             Elements are basic visible units to create user interfaces. Each element has a specific
             function, and doesn't rely on other HTML layout composition.
-        </h3>
+        </Header>
     </Article>
 
     <Article>
-        <h1>Framework Elements</h1>
+        <Header>Framework Elements</Header>
         <ul class="px-medium h4">
             <li>
                 <a href="#framework/elements/article">Article</a>

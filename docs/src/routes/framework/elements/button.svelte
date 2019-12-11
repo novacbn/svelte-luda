@@ -1,5 +1,5 @@
 <script>
-    const {Article} = window.luda;
+    const {Article, Header} = window.luda;
 
     import Repl from "../../../components/Repl.svelte";
     import Layout from "../_layout.svelte";
@@ -9,34 +9,34 @@
 
 <Layout>
     <Article>
-        <h1 class="fw-semibold">Button</h1>
-        <h3 class="fw-light">
+        <Header fw-semibold>Button</Header>
+        <Header size="3" fw-light>
             Buttons are simple blocky elements that be clicked to active internal application
             functionality or even some times act as a link.
-        </h3>
+        </Header>
 
-        <h2>Import via CommonJS</h2>
+        <Header size="2">Import via CommonJS</Header>
         <pre>
             <code>const Button = require("svelte-luda/lib/elements/Button.svelte");</code>
         </pre>
 
-        <h2>Import via ES2015</h2>
+        <Header size="2">Import via ES2015</Header>
         <pre>
             <code>import Button from "svelte-luda/lib/elements/Button.svelte";</code>
         </pre>
 
-        <h2>
+        <Header size="2">
             Import from
             <code>{'<script />'}</code>
             Package
-        </h2>
+        </Header>
         <pre>
             <code>const {'{Button}'} = window.luda;</code>
         </pre>
     </Article>
 
     <Article>
-        <h1>Button Styles</h1>
+        <Header>Button Styles</Header>
         <p>
             A button can be created by using the
             <code>Button</code>
@@ -44,7 +44,7 @@
             styles in the below examples.
         </p>
 
-        <h2>Solid Buttons</h2>
+        <Header size="2">Solid Buttons</Header>
         <small class="d-block">
             <code>type Button.color = "danger" | "dark" | "light" | "primary" | "secondary";</code>
         </small>
@@ -55,7 +55,7 @@
         </p>
         <Repl value={examples.styles.solid} />
 
-        <h2>Hollow Buttons</h2>
+        <Header size="2">Hollow Buttons</Header>
         <small class="d-block">
             <code>type Button.hollow = boolean;</code>
         </small>
@@ -66,7 +66,7 @@
         </p>
         <Repl value={examples.styles.hollow} />
 
-        <h2>Text Buttons</h2>
+        <Header size="2">Text Buttons</Header>
         <small class="d-block">
             <code>type Button.text = boolean;</code>
         </small>
@@ -80,7 +80,7 @@
     </Article>
 
     <Article>
-        <h1>Button Tags</h1>
+        <Header>Button Tags</Header>
         <small class="d-block">
             <code>type Button.href = string;</code>
         </small>
@@ -95,10 +95,10 @@
     </Article>
 
     <Article>
-        <h1>Functional Buttons</h1>
+        <Header>Functional Buttons</Header>
         <p>Luda offers some functional buttons, let's have a look at what they can do.</p>
 
-        <h2>Checkbox Buttons</h2>
+        <Header size="2">Checkbox Buttons</Header>
         <small class="d-block">
             <pre>
                 <code>type Button.checkbox = boolean;</code>
@@ -128,7 +128,7 @@
         </p>
         <Repl value={examples.functional.checkbox} />
 
-        <h2>Radio Buttons</h2>
+        <Header size="2">Radio Buttons</Header>
         <small class="d-block">
             <pre>
                 <code>type Button.radio = boolean;</code>
@@ -161,7 +161,7 @@
         </p>
         <Repl value={examples.functional.radio} />
 
-        <h2>File Buttons</h2>
+        <Header size="2">File Buttons</Header>
         <small class="d-block">
             <pre>
                 <code>type Button.file = boolean;</code>
@@ -188,14 +188,14 @@
     </Article>
 
     <Article>
-        <h1>Button States</h1>
+        <Header>Button States</Header>
         <p>
             Button states can be controlled through the relavent
             <code>Button.*</code>
             properties
         </p>
 
-        <h2>Active</h2>
+        <Header size="2">Active</Header>
         <small class="d-block">
             <code>type Button.active = boolean;</code>
         </small>
@@ -232,7 +232,7 @@
         </p>
         <Repl value={examples.states.active} />
 
-        <h2>Disabled</h2>
+        <Header size="2">Disabled</Header>
         <small class="d-block">
             <code>type Button.disabled = boolean;</code>
         </small>
@@ -249,7 +249,7 @@
         </p>
         <Repl value={examples.states.disabled} />
 
-        <h2>Readonly</h2>
+        <Header size="2">Readonly</Header>
         <small class="d-block">
             <code>type Button.readonly = boolean;</code>
         </small>
@@ -265,14 +265,14 @@
     </Article>
 
     <Article>
-        <h1>Size Modifiers</h1>
+        <Header>Size Modifiers</Header>
         <p>
             If you want to change the size of a
             <code>Button</code>
             , you can use the side modifier properties
         </p>
 
-        <h2>Small</h2>
+        <Header size="2">Small</Header>
         <small class="d-block">
             <code>type Button.size = "small";</code>
         </small>
@@ -287,7 +287,7 @@
         </p>
         <Repl value={examples.sizes.small} />
 
-        <h2>Large</h2>
+        <Header size="2">Large</Header>
         <small class="d-block">
             <code>type Button.size = "large";</code>
         </small>
@@ -302,7 +302,7 @@
         </p>
         <Repl value={examples.sizes.large} />
 
-        <h2>Fluid</h2>
+        <Header size="2">Fluid</Header>
         <small class="d-block">
             <code>type Button.fluid = boolean;</code>
         </small>
@@ -319,7 +319,7 @@
     </Article>
 
     <Article>
-        <h1>Event Listeners</h1>
+        <Header>Event Listeners</Header>
         <p>
             Like other
             <code>Component</code>
@@ -328,7 +328,7 @@
             also provides an event.
         </p>
 
-        <h2>click</h2>
+        <Header size="2">click</Header>
         <small class="d-block">
             <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event">
                 <code>MDN: Click Event</code>

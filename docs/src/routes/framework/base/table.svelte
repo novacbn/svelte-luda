@@ -1,5 +1,5 @@
 <script>
-    const {Article} = window.luda;
+    const {Article, Header} = window.luda;
 
     import Repl from "../../../components/Repl.svelte";
     import Layout from "../_layout.svelte";
@@ -9,41 +9,41 @@
 
 <Layout>
     <Article>
-        <h1 class="fw-semibold">Table</h1>
-        <h3 class="fw-light">
+        <Header fw-semibold>Table</Header>
+        <Header size="3" fw-light>
             A table represents tabular data — that is, information presented in a two-dimensional
             table comprised of rows and columns of cells containing data.
-        </h3>
+        </Header>
 
-        <h2>Import via CommonJS</h2>
+        <Header size="2">Import via CommonJS</Header>
         <pre>
             <code>const Table = require("svelte-luda/lib/base/Table.svelte");</code>
         </pre>
 
-        <h2>Import via ES2015</h2>
+        <Header size="2">Import via ES2015</Header>
         <pre>
             <code>import Button from "svelte-luda/lib/base/Table.svelte";</code>
         </pre>
 
-        <h2>
+        <Header size="2">
             Import from
             <code>{'<script />'}</code>
             Package
-        </h2>
+        </Header>
         <pre>
             <code>const {'{Table}'} = window.luda;</code>
         </pre>
     </Article>
 
     <Article>
-        <h1>Table Styles</h1>
+        <Header>Table Styles</Header>
         <p>
             Luda offers some different built-in ways of styling your
             <code>Table</code>
             Components.
         </p>
 
-        <h2>Plain Table</h2>
+        <Header size="2">Plain Table</Header>
         <p>
             By default in
             {@html `<b>svelte-luda</b>,`}
@@ -52,7 +52,7 @@
         </p>
         <Repl value={examples.styles.plain} />
 
-        <h2>Bordered Table</h2>
+        <Header size="2">Bordered Table</Header>
         <small class="d-block">
             <code>type Table.border = boolean;</code>
         </small>
@@ -63,7 +63,7 @@
         </p>
         <Repl value={examples.styles.bordered} />
 
-        <h2>Striped Table</h2>
+        <Header size="2">Striped Table</Header>
         <small class="d-block">
             <code>type Table.stripes = boolean;</code>
         </small>
@@ -74,7 +74,7 @@
         </p>
         <Repl value={examples.styles.striped} />
 
-        <h2>Bordered and Striped Table</h2>
+        <Header size="2">Bordered and Striped Table</Header>
         <small class="d-block">
             <pre>
                 <code>type Table.border = boolean;</code>
@@ -95,14 +95,14 @@
     </Article>
 
     <Article>
-        <h1>Table Modifiers</h1>
+        <Header>Table Modifiers</Header>
         <p>
             There is also a few modifiers provided by Luda that you can utilize with your
             <code>Table</code>
             Components.
         </p>
 
-        <h2>Hover Effect</h2>
+        <Header size="2">Hover Effect</Header>
         <small class="d-block">
             <code>type Table.hover = boolean;</code>
         </small>
@@ -116,7 +116,7 @@
         </p>
         <Repl value={examples.modifiers.hover} />
 
-        <h2>No Wrap</h2>
+        <Header size="2">No Wrap</Header>
         <small class="d-block">
             <code>type Table.nowrap = boolean;</code>
         </small>

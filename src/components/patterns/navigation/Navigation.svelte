@@ -1,6 +1,6 @@
 <script context="module">
     /**
-     *
+     * Represents the `Symbol` used to access the `Navigation` Component's runtime store
      */
     export const NAVIGATION_CONTEXT_SYMBOL = Symbol("luda-navigation");
 </script>

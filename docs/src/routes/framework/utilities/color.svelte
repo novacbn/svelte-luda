@@ -1,5 +1,5 @@
 <script>
-    const {Article} = window.luda;
+    const {Article, Header} = window.luda;
 
     import Repl from "../../../components/Repl.svelte";
     import Layout from "../_layout.svelte";
@@ -9,14 +9,14 @@
 
 <Layout>
     <Article>
-        <h1 class="fw-semibold">Color</h1>
-        <h3 class="fw-light">
-            Use background utilities to change color of texts.
-        </h3>
+        <Header fw-semibold>Color</Header>
+        <Header size="3" fw-light>
+            Use color utilities to change display color of texts.
+        </Header>
     </Article>
 
     <Article>
-        <h1>Text Color</h1>
+        <Header>Text Color</Header>
         <p>
             Text color utility properties are usable on any Component supplied by
             <b>svelte-luda</b>
