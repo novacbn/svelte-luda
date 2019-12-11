@@ -29,7 +29,7 @@
 
             <NavigationItems>
                 <p class="px-small c-light fw-semibold">Base</p>
-                <Button color="light" href="#framework" text>Introduction</Button>
+                <Button color="light" href="#framework/base" text>Introduction</Button>
                 <Button color="light" href="#framework/base/baseline" text>Baseline</Button>
                 <Button color="light" href="#framework/base/code" text>Code</Button>
                 <Button color="light" href="#framework/base/header" text>Header</Button>
@@ -98,7 +98,7 @@
                 <Button color="light" href="#framework/utilities/opacity" text>Opacity</Button>
                 <Button color="light" href="#framework/utilities/overflow" text>Overflow</Button>
                 <Button color="light" href="#framework/utilities/position" text>Position</Button>
-                <Button color="light" href="#framework/utilities/shadpw" text>Shadow</Button>
+                <Button color="light" href="#framework/utilities/shadow" text>Shadow</Button>
                 <Button color="light" href="#framework/utilities/shape" text>Shape</Button>
                 <Button color="light" href="#framework/utilities/size" text>Size</Button>
                 <Button color="light" href="#framework/utilities/spacing" text>Spacing</Button>

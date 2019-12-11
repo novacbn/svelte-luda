@@ -49,6 +49,64 @@
         </p>
     </article>
 
+    <article class="px-small py-large grid ai-center">
+        <div class="col-12 col-6-m mb-medium mb-large-m d-flex jc-center">
+            <div class="modal grid-edge fd-column ai-center" style="max-width:calc(100% - 24px);">
+                <a href="#framework/elements">
+                    <div class="bc-danger" style="width:128px;height:128px;" />
+                </a>
+
+                <a href="#framework/base">
+                    <h2>Base</h2>
+                </a>
+
+                <h5>Basic style layer ontop of HTML</h5>
+            </div>
+        </div>
+
+        <div class="col-12 col-6-m mb-medium mb-large-m d-flex jc-center">
+            <div class="modal grid-edge fd-column ai-center" style="max-width:calc(100% - 24px);">
+                <a href="#framework/elements">
+                    <div class="bc-danger" style="width:128px;height:128px;" />
+                </a>
+
+                <a href="#framework/elements">
+                    <h2>Elements</h2>
+                </a>
+
+                <h5>Basic visual units of UI</h5>
+            </div>
+        </div>
+
+        <div class="col-12 col-6-m mb-medium mb-none-m d-flex jc-center">
+            <div class="modal grid-edge fd-column ai-center" style="max-width:calc(100% - 24px);">
+                <a href="#framework/patterns">
+                    <div class="bc-danger" style="width:128px;height:128px;" />
+                </a>
+
+                <a href="#framework/patterns">
+                    <h2>Patterns</h2>
+                </a>
+
+                <h5>Modular commonly used UI designs</h5>
+            </div>
+        </div>
+
+        <div class="col-12 col-6-m d-flex jc-center">
+            <div class="modal grid-edge fd-column ai-center" style="max-width:calc(100% - 24px);">
+                <a href="#framework/utilities">
+                    <div class="bc-danger" style="width:128px;height:128px;" />
+                </a>
+
+                <a href="#framework/utilities">
+                    <h2>Utilities</h2>
+                </a>
+
+                <h5>Globally accessible UI modifications</h5>
+            </div>
+        </div>
+    </article>
+
     <article class="px-small py-large grid-edge ai-center bc-muted">
         <div class="col-auto h-100 p-large">
             <h2>Declarative Layout / Properties</h2>
@@ -95,50 +153,6 @@
 
         <div class="col-12 col-6-m">
             <div class="w-100 bc-danger" style="height:25rem;" />
-        </div>
-    </article>
-
-    <article class="px-small py-large grid ai-center">
-        <div class="col-12 col-4-m mb-small mb-none-m d-flex jc-center">
-            <div class="modal grid-edge fd-column ai-center" style="max-width:450px;">
-                <a href="#framework/elements">
-                    <div class="bc-danger" style="width:128px;height:128px;" />
-                </a>
-
-                <a href="#framework/elements">
-                    <h2>Elements</h2>
-                </a>
-
-                <h5>Basic visual units of UI</h5>
-            </div>
-        </div>
-
-        <div class="col-12 col-4-m mb-small mb-none-m d-flex jc-center">
-            <div class="modal grid-edge fd-column ai-center" style="max-width:450px;">
-                <a href="#framework/patterns">
-                    <div class="bc-danger" style="width:128px;height:128px;" />
-                </a>
-
-                <a href="#framework/patterns">
-                    <h2>Patterns</h2>
-                </a>
-
-                <h5>Modular commonly used UI designs</h5>
-            </div>
-        </div>
-
-        <div class="col-12 col-4-m mb-small mb-none-m d-flex jc-center">
-            <div class="modal grid-edge fd-column ai-center" style="max-width:450px;">
-                <a href="#framework/utilities">
-                    <div class="bc-danger" style="width:128px;height:128px;" />
-                </a>
-
-                <a href="#framework/utilities">
-                    <h2>Utilities</h2>
-                </a>
-
-                <h5>Globally accessible UI modifications</h5>
-            </div>
         </div>
     </article>
 </main>
