@@ -1,5 +1,5 @@
 <script>
-    import {getContext, onDestroy, onMount} from "svelte";
+    import {getContext, onDestroy} from "svelte";
 
     import {parse_utility} from "../../../util/luda";
 
@@ -9,13 +9,35 @@
     export let style = "";
 
     export let active = false;
+    export let color = "secondary";
+    export let hollow = true;
     export let title = "";
 
     export {_class as class};
 
     const context = getContext(TAB_CONTEXT_SYMBOL);
 
-    $: state = context ? context.state : state;
+    $: state = context ? context.state : null;
+
+    $: options = {color, hollow, title};
+
+    let destroy;
+    $: {
+        // On every change to `.title`, we need to destroy the previously
+        // cached tab data, and then create a new if we have context
+        if (destroy) {
+            destroy();
+            destroy = null;
+        }
+
+        if (context) destroy = context.push_tab(options).destroy;
+    }
+
+    $: {
+        // We need to update the currently selected tab
+        // if the `.active` property is changed
+        if (context && active) context.select_tab(title);
+    }
 
     let active_class = "";
     $: {
@@ -25,24 +47,10 @@
             // the Svelte compiler knows to be reactive with the following code block
             $state;
 
-            active_toggle = context.get_selected() === title;
+            active_toggle = context.get_tab().title === title;
         }
 
         active_class = active_toggle ? "tab-pane-active" : "";
-    }
-
-    let destroy;
-    $: {
-        if (destroy) {
-            destroy();
-            destroy = null;
-        }
-
-        if (context) destroy = context.push_tab(title).destroy;
-    }
-
-    $: {
-        if (context && active) context.select_tab(title);
     }
 
     onDestroy(() => {

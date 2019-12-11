@@ -67,9 +67,11 @@
 
     let color_class = "";
     $: {
-        if (hollow) color_class = color_hollow_guard(color);
-        else if (text) color_class = color_text_guard(color);
-        else color_class = color_guard(color);
+        if (color) {
+            if (hollow) color_class = color_hollow_guard(color);
+            else if (text) color_class = color_text_guard(color);
+            else color_class = color_guard(color);
+        }
     }
 </script>
 

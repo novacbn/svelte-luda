@@ -3,6 +3,109 @@
      * Represents the `Symbol` used to access the `Tabs` Component's runtime store
      */
     export const TAB_CONTEXT_SYMBOL = Symbol("luda-tabs");
+
+    /**
+     * Returns a new runtime context for the `Tab` Component, that provides methods for
+     * interacting with an immutable state
+     */
+    function make_context(tabs = []) {
+        /**
+         * IMPLEMENTATION NOTE:
+         *  Using an `Object[]` was chosen instead of a faster `Object<string, boolean>` implementation so end-developers
+         *  can provide additional metadata like button colors or other things, e.g. `{active: boolean, title: string, color: string}`
+         */
+
+        // We need to subscribe to the store to cache new states,
+        // since we're not running in the default `<script>` context
+        const state = writable(tabs);
+        state.subscribe((value) => (tabs = value));
+
+        return {
+            state: state,
+
+            /**
+             * Returns a copy of the found tab object via the supplied title, preserving immutability
+             */
+            find_tab(title) {
+                for (const tab of tabs) {
+                    if (tab.title === title) return {...tab};
+                }
+
+                return null;
+            },
+
+            /**
+             * Returns a copy of the currently selected tab object, preserving immutability
+             */
+            get_tab() {
+                for (const tab of tabs) {
+                    if (tab.active) return {...tab};
+                }
+
+                return null;
+            },
+
+            /**
+             * Returns a copy of the `Tabs` Component's state, preserving immutability
+             */
+            get_tabs() {
+                return tabs.map((tab) => {
+                    return {...tab};
+                });
+            },
+
+            /**
+             * Pushes new tab data into the `Tabs` Component's state, returning a deconstructor function
+             */
+            push_tab(data) {
+                // We need to use a copy instead of mutating the current array
+                const tabs = this.get_tabs();
+                const {title} = data;
+
+                tabs.push({...data, active: false});
+                state.set(tabs);
+
+                // We need to make sure `.destroy()` cannot be called more than
+                // one time, so we need to provide a boolean flag
+                let destroyed = false;
+                return {
+                    destroy: () => {
+                        // Skip if `.destroy()` was called before
+                        if (destroyed) return;
+
+                        const index = tabs.findIndex((tab) => tab.title === title);
+                        const tab = tabs[index];
+
+                        // After removing the tab, if there are any tabs remaining
+                        // we should default back to the first one being active
+                        tabs.splice(index, 1);
+                        if (tab.active && tabs.length > 0) tabs[0].active = true;
+
+                        state.set(tab);
+                        destroyed = true;
+                    }
+                };
+            },
+
+            /**
+             * Selects a new active tab based on a supplied title
+             */
+            select_tab(title) {
+                const tab = tabs.find((tab) => tab.title === title);
+                if (!tab) {
+                    throw ReferenceError(
+                        `bad argument #1 to 'TabsContext.select_tab' (invalid title '${title}')`
+                    );
+                }
+
+                tabs = tabs.map((tab) => {
+                    return {...tab, active: tab.title === title};
+                });
+
+                state.set(tabs);
+            }
+        };
+    }
 </script>
 
 <script>
@@ -16,77 +119,7 @@
 
     export {_class as class};
 
-    const state = writable([]);
-
-    /**
-     * Returns a copy of the `Tabs` Component's state, preserving immutability
-     */
-    function get_tabs() {
-        const tabs = $state;
-        return tabs.map((tab) => {
-            return {...tab};
-        });
-    }
-
-    const context = {
-        state: state,
-
-        /**
-         * Returns the currently selected tab title
-         */
-        get_selected() {
-            for (const tab of $state) {
-                if (tab.active) return tab.title;
-            }
-
-            return null;
-        },
-
-        /**
-         * Pushes new tab data into the `Tabs` Component's state, returning a deconstructor function
-         */
-        push_tab(title) {
-            const tabs = get_tabs();
-
-            tabs.push({title, active: false});
-            $state = tabs;
-
-            return {
-                destroy: () => {
-                    const tabs = $state;
-
-                    const index = tabs.findIndex((tab) => tab.title === title);
-                    const tab = tabs[index];
-
-                    tabs.splice(index, 1);
-                    if (tab.active && tabs.length > 0) tabs[0].active = true;
-
-                    $state = tabs;
-                }
-            };
-        },
-
-        /**
-         * Selects a new active tab based on a supplied title
-         */
-        select_tab(title) {
-            let tabs = get_tabs();
-
-            const index = tabs.findIndex((tab) => tab.title === title);
-            if (index < 0) {
-                throw ReferenceError(
-                    `bad argument #1 to 'TabsContext.select_tab' (invalid title '${title}')`
-                );
-            }
-
-            tabs = tabs.map((tab) => {
-                return {...tab, active: tab.title === title};
-            });
-
-            $state = tabs;
-        }
-    };
-
+    const context = make_context();
     setContext(TAB_CONTEXT_SYMBOL, context);
 </script>
 

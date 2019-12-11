@@ -15,7 +15,7 @@
 
     const context = getContext(TAB_CONTEXT_SYMBOL);
 
-    $: state = context ? context.state : state;
+    $: state = context ? context.state : null;
     $: horizontal_class = horizontal ? "btns-y btns-fluid" : "btns-x";
 
     /**
@@ -29,10 +29,10 @@
 </script>
 
 <nav class="tab-indicators {horizontal_class} {parse_utility($$props)} {_class}" {style}>
-    {#if context && context.state}
+    {#if state}
         {#each $state as item}
             <slot {item}>
-                <Button color="secondary" hollow on:click={on_click}>{item.title}</Button>
+                <Button on:click={on_click} {...item}>{item.title}</Button>
             </slot>
         {/each}
     {:else}
