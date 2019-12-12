@@ -24,12 +24,12 @@
 <script>
     import {getContext} from "svelte";
 
-    import {parse_utility} from "../../../util/luda";
+    import {get_attributes} from "../../../util/browser";
+    import {get_utilities} from "../../../util/luda";
 
     import {NAVIGATION_CONTEXT_SYMBOL} from "./Navigation.svelte";
 
     let _class = "";
-    export let style = "";
 
     export let close = false;
     export let color = COLOR_NAMES.light;
@@ -54,9 +54,9 @@
 
 <button
     class="{nav_class} btn btn-ico {color_class}
-    {parse_utility($$props)}
+    {get_utilities($$props)}
     {_class}"
-    {style}
+    {...get_attributes($$props)}
     on:click={on_click}>
     {#if close}
         <i class="ico ico-cross" />

@@ -1,4 +1,10 @@
 /**
+ * Utilities -> Browser
+ */
+
+export {get_attributes} from "./util/browser";
+
+/**
  * Utilities -> Luda
  */
 
@@ -11,7 +17,7 @@ export {
     SCREEN_SHORT_NAMES,
     SIZE_NAMES,
     UTILITY_CLASS_NAMES,
-    parse_utility
+    get_utilities
 } from "./util/luda";
 
 /**

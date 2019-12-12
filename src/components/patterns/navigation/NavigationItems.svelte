@@ -1,8 +1,8 @@
 <script>
-    import {parse_utility} from "../../../util/luda";
+    import {get_attributes} from "../../../util/browser";
+    import {get_utilities} from "../../../util/luda";
 
     let _class = "";
-    export let style = "";
 
     export let submenu = false;
 
@@ -11,6 +11,6 @@
     $: items_class = submenu ? "nav-sub-items" : "nav-items";
 </script>
 
-<nav class="{items_class} {parse_utility($$props)} {_class}" {style}>
+<nav class="{items_class} {get_utilities($$props)} {_class}" {...get_attributes($$props)}>
     <slot />
 </nav>

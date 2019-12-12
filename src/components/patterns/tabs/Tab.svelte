@@ -112,12 +112,12 @@
     import {setContext} from "svelte";
     import {writable} from "svelte/store";
 
-    import {parse_utility} from "../../../util/luda";
+    import {get_attributes} from "../../../util/browser";
+    import {get_utilities} from "../../../util/luda";
 
     import TabIndicators from "./TabIndicators.svelte";
 
     let _class = "";
-    export let style = "";
 
     export let nocontext = false;
 
@@ -131,7 +131,7 @@
     }
 </script>
 
-<div class="tab {parse_utility($$props)} {_class}" {style}>
+<div class="tab {get_utilities($$props)} {_class}" {...get_attributes($$props)}>
     <slot name="indicators">
         <TabIndicators />
     </slot>

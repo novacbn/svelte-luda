@@ -1,8 +1,8 @@
 <script>
-    import {parse_utility} from "../../util/luda";
+    import {get_attributes} from "../../util/browser";
+    import {get_utilities} from "../../util/luda";
 
     let _class = "";
-    export let style = "";
 
     export let border = false;
     export let hover = false;
@@ -29,7 +29,13 @@
     NOTE: it's interesting that instead of a `.table` class on the base `<table>` element,
     it's instead a parent `<div>` container. maybe to enable `.table-nowrap` more easily?
 -->
-<div class="{table_class} {hover_class} {wrap_class} {parse_utility($$props)} {_class}" {style}>
+<div
+    class="{table_class}
+    {hover_class}
+    {wrap_class}
+    {get_utilities($$props)}
+    {_class}"
+    {...get_attributes($$props)}>
     <table>
         <slot />
     </table>

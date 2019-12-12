@@ -29,10 +29,10 @@
 </script>
 
 <script>
-    import {parse_utility} from "../../util/luda";
+    import {get_attributes} from "../../util/browser";
+    import {get_utilities} from "../../util/luda";
 
     let _class = "";
-    export let style = "";
 
     export let color = "";
     export let inline = false;
@@ -46,27 +46,57 @@
 </script>
 
 {#if header_size === '1'}
-    <h1 class="{color_class} {inline_class} {parse_utility($$props)} {_class}" {style}>
+    <h1
+        class="{color_class}
+        {inline_class}
+        {get_utilities($$props)}
+        {_class}"
+        {...get_attributes($$props)}>
         <slot />
     </h1>
 {:else if header_size === '2'}
-    <h2 class="{color_class} {inline_class} {parse_utility($$props)} {_class}" {style}>
+    <h2
+        class="{color_class}
+        {inline_class}
+        {get_utilities($$props)}
+        {_class}"
+        {...get_attributes($$props)}>
         <slot />
     </h2>
 {:else if header_size === '3'}
-    <h3 class="{color_class} {inline_class} {parse_utility($$props)} {_class}" {style}>
+    <h3
+        class="{color_class}
+        {inline_class}
+        {get_utilities($$props)}
+        {_class}"
+        {...get_attributes($$props)}>
         <slot />
     </h3>
 {:else if header_size === '4'}
-    <h4 class="{color_class} {inline_class} {parse_utility($$props)} {_class}" {style}>
+    <h4
+        class="{color_class}
+        {inline_class}
+        {get_utilities($$props)}
+        {_class}"
+        {...get_attributes($$props)}>
         <slot />
     </h4>
 {:else if header_size === '5'}
-    <h5 class="{color_class} {inline_class} {parse_utility($$props)} {_class}" {style}>
+    <h5
+        class="{color_class}
+        {inline_class}
+        {get_utilities($$props)}
+        {_class}"
+        {...get_attributes($$props)}>
         <slot />
     </h5>
 {:else if header_size === '6'}
-    <h6 class="{color_class} {inline_class} {parse_utility($$props)} {_class}" {style}>
+    <h6
+        class="{color_class}
+        {inline_class}
+        {get_utilities($$props)}
+        {_class}"
+        {...get_attributes($$props)}>
         <slot />
     </h6>
 {/if}

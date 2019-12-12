@@ -3,7 +3,7 @@
     import {ALIGN_ITEMS_NAMES, JUSTIFY_CONTENT_NAMES, SCREEN_SHORT_NAMES} from "../../../util/luda";
 
     /**
-     *
+     * Represents the item alignment modes available to `Grid`
      */
     export const GRID_ALIGN_NAMES = [
         ALIGN_ITEMS_NAMES.center,
@@ -12,7 +12,7 @@
     ];
 
     /**
-     *
+     * Represents the item justification modes available to `Grid`
      */
     export const GRID_JUSTIFY_NAMES = [
         JUSTIFY_CONTENT_NAMES.around,
@@ -52,10 +52,10 @@
 </script>
 
 <script>
-    import {parse_utility} from "../../../util/luda";
+    import {get_attributes} from "../../../util/browser";
+    import {get_utilities} from "../../../util/luda";
 
     let _class = "";
-    export let style = "";
 
     export let edge = false;
 
@@ -82,6 +82,11 @@
     $: justify_l_class = justify_l ? justify_l_guard(justify_l) : "";
 </script>
 
-<div class="{grid_class} {justify_class} {parse_utility($$props)} {_class}" {style}>
+<div
+    class="{grid_class}
+    {justify_class}
+    {get_utilities($$props)}
+    {_class}"
+    {...get_attributes($$props)}>
     <slot />
 </div>

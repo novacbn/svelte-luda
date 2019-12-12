@@ -1,12 +1,12 @@
 <script>
-    import {parse_utility} from "../../util/luda";
+    import {get_attributes} from "../../util/browser";
+    import {get_utilities} from "../../util/luda";
 
     let _class = "";
-    export let style = "";
 
     export {_class as class};
 </script>
 
-<div class="{parse_utility($$props)} {_class}" {style}>
+<div class="{get_utilities($$props)} {_class}" {...get_attributes($$props)}>
     <slot />
 </div>

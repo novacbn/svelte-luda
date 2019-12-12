@@ -199,7 +199,7 @@ export const UTILITY_CLASS_NAMES = {
 };
 
 /**
- * Represents a lookup `Object<string, boolean>` so `parse_utility` can operate constant speed
+ * Represents a lookup `Object<string, boolean>` so `get_utilities` can operate constant speed
  */
 const UTILITY_CLASS_LOOKUP = Object.values(UTILITY_CLASS_NAMES).reduce((lookup, value) => {
     lookup[value] = true;
@@ -226,7 +226,7 @@ function sort_properties(property_a, property_b) {
  * to the supplied Component properties
  * @param {*} props
  */
-export function parse_utility(props) {
+export function get_utilities(props) {
     const class_names = [];
     const properties = Object.keys(props);
 

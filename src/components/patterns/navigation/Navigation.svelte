@@ -9,10 +9,10 @@
     import {setContext} from "svelte";
     import {writable} from "svelte/store";
 
-    import {parse_utility} from "../../../util/luda";
+    import {get_attributes} from "../../../util/browser";
+    import {get_utilities} from "../../../util/luda";
 
     let _class = "";
-    export let style = "";
 
     export let aside = false;
     export let opened = false;
@@ -28,11 +28,11 @@
 </script>
 
 {#if aside}
-    <aside class="nav-aside {parse_utility($$props)} {_class}" {style}>
+    <aside class="nav-aside {get_utilities($$props)} {_class}" {...get_attributes($$props)}>
         <slot />
     </aside>
 {:else}
-    <header class="nav-header {parse_utility($$props)} {_class}" {style}>
+    <header class="nav-header {get_utilities($$props)} {_class}" {...get_attributes($$props)}>
         <slot />
     </header>
 {/if}

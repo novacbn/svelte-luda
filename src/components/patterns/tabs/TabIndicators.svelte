@@ -1,13 +1,13 @@
 <script>
     import {getContext} from "svelte";
 
-    import {parse_utility} from "../../../util/luda";
+    import {get_attributes} from "../../../util/browser";
+    import {get_utilities} from "../../../util/luda";
 
     import Button from "../../elements/Button.svelte";
     import {TAB_CONTEXT_SYMBOL} from "./Tab.svelte";
 
     let _class = "";
-    export let style = "";
 
     export let horizontal = false;
 
@@ -28,7 +28,11 @@
     }
 </script>
 
-<nav class="tab-indicators {horizontal_class} {parse_utility($$props)} {_class}" {style}>
+<nav
+    class="tab-indicators {horizontal_class}
+    {get_utilities($$props)}
+    {_class}"
+    {...get_attributes($$props)}>
     {#if state}
         {#each $state as item}
             <slot {item}>

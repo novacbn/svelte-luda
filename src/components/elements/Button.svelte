@@ -31,11 +31,11 @@
 </script>
 
 <script>
-    import {parse_utility} from "../../util/luda";
+    import {get_attributes} from "../../util/browser";
+    import {get_utilities} from "../../util/luda";
 
     let _class = "";
     export let id = "";
-    export let style = "";
 
     export let active = false;
     export let disabled = false;
@@ -81,10 +81,11 @@
         {color_class}
         {fluid_class}
         {size_class}
-        {parse_utility($$props)}
+        {get_utilities($$props)}
         {_class}"
         {...disabled ? {disabled: ''} : {}}
-        {...readonly ? {readonly: ''} : {}}>
+        {...readonly ? {readonly: ''} : {}}
+        {...get_attributes($$props)}>
         <input type="checkbox" {id} {name} {readonly} {value} bind:checked={active} />
 
         <label for={id}>
@@ -97,9 +98,10 @@
         {color_class}
         {fluid_class}
         {size_class}
-        {parse_utility($$props)}
+        {get_utilities($$props)}
         {_class}"
-        {...disabled ? {disabled: ''} : {}}>
+        {...disabled ? {disabled: ''} : {}}
+        {...get_attributes($$props)}>
         <input type="file" {disabled} {id} {multiple} {name} />
 
         <label for={id}>
@@ -112,10 +114,11 @@
         {color_class}
         {fluid_class}
         {size_class}
-        {parse_utility($$props)}
+        {get_utilities($$props)}
         {_class}"
         {...disabled ? {disabled: ''} : {}}
-        {...readonly ? {readonly: ''} : {}}>
+        {...readonly ? {readonly: ''} : {}}
+        {...get_attributes($$props)}>
         <input type="radio" {disabled} {id} {name} {readonly} {value} bind:group />
 
         <label for={id}>
@@ -128,13 +131,12 @@
         {color_class}
         {fluid_class}
         {size_class}
-        {parse_utility($$props)}
+        {get_utilities($$props)}
         {_class}"
         {...disabled ? {disabled: ''} : {}}
         {href}
-        {id}
         {target}
-        {style}
+        {...get_attributes($$props)}
         on:click>
         <slot />
     </a>
@@ -144,11 +146,10 @@
         {color_class}
         {fluid_class}
         {size_class}
-        {parse_utility($$props)}
+        {get_utilities($$props)}
         {_class}"
         {disabled}
-        {id}
-        {style}
+        {...get_attributes($$props)}
         on:click>
         <slot />
     </button>

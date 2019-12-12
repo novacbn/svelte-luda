@@ -1,12 +1,12 @@
 <script>
     import {getContext, onDestroy} from "svelte";
 
-    import {parse_utility} from "../../../util/luda";
+    import {get_attributes} from "../../../util/browser";
+    import {get_utilities} from "../../../util/luda";
 
     import {TAB_CONTEXT_SYMBOL} from "./Tab.svelte";
 
     let _class = "";
-    export let style = "";
 
     export let active = false;
     export let color = "secondary";
@@ -58,6 +58,6 @@
     });
 </script>
 
-<div class="tab-pane {active_class} {parse_utility($$props)} {_class}" {style}>
+<div class="tab-pane {active_class} {get_utilities($$props)} {_class}" {...get_attributes($$props)}>
     <slot />
 </div>

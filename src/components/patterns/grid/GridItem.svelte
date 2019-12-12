@@ -113,10 +113,10 @@
 </script>
 
 <script>
-    import {parse_utility} from "../../../util/luda";
+    import {get_attributes} from "../../../util/browser";
+    import {get_utilities} from "../../../util/luda";
 
     let _class = "";
-    export let style = "";
 
     export let align = "";
     export let align_m = "";
@@ -168,8 +168,8 @@
     {order_class}
     {order_m_class}
     {order_l_class}
-    {parse_utility($$props)}
+    {get_utilities($$props)}
     {_class}"
-    {style}>
+    {...get_attributes($$props)}>
     <slot />
 </div>

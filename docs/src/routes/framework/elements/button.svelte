@@ -2,6 +2,7 @@
     const {Article, Header} = window.luda;
 
     import Repl from "../../../components/Repl.svelte";
+    import DocsBlock from "../../../components/docs/DocsBlock.svelte";
     import DocsImport from "../../../components/docs/DocsImport.svelte";
     import DocsTypeHints from "../../../components/docs/DocsTypeHints.svelte";
 
@@ -25,65 +26,68 @@
     </Article>
 
     <Article>
-        <Header>Button Styles</Header>
-        <p>
+        <DocsBlock title="Button Styles">
             A button can be created by using the
             <code>Button</code>
             Component, can be customized with different a look and feel. Let's preview the button
             styles in the below examples.
-        </p>
+        </DocsBlock>
 
-        <Header size="2">Solid Buttons</Header>
-        <DocsTypeHints
-            types={['type Button.color = "danger" | "dark" | "light" | "primary" | "secondary";']} />
-        <p>
+        <DocsBlock
+            code={examples.styles.solid}
+            title="Solid Buttons"
+            types={['type Button.color = "danger" | "dark" | "light" | "primary" | "secondary";']}
+            small>
             Change the
             <code>Button.color</code>
             property to create solid buttons.
-        </p>
-        <Repl value={examples.styles.solid} />
+        </DocsBlock>
 
-        <Header size="2">Hollow Buttons</Header>
-        <DocsTypeHints types={['type Button.hollow = boolean;']} />
-        <p>
+        <DocsBlock
+            code={examples.styles.hollow}
+            title="Hollow Buttons"
+            types={['type Button.hollow = boolean;']}
+            small>
             A hollow button shows its background when being hovered of clicked. Toggle the
             <code>Button.hollow</code>
             property to create hollow styled buttons.
-        </p>
-        <Repl value={examples.styles.hollow} />
+        </DocsBlock>
 
-        <Header size="2">Text Buttons</Header>
-        <DocsTypeHints types={['type Button.text = boolean;']} />
-        <p>
+        <DocsBlock
+            code={examples.styles.text}
+            title="Text Buttons"
+            types={['type Button.text = boolean;']}
+            small>
             Text buttons have the same sizes as solid and hollow buttons. They have no backgrounds
             or borders. Toggle the
             <code>Button.text</code>
             property to create text styled buttons.
-        </p>
-        <Repl value={examples.styles.text} />
+        </DocsBlock>
     </Article>
 
     <Article>
-        <Header>Button Tags</Header>
-        <DocsTypeHints types={['type Button.href = string;']} />
-        <p>
+        <DocsBlock
+            code={examples.tags.href}
+            title="Button Links"
+            types={['type Button.href = string;']}>
             To utilize links as a
             <code>Button</code>
             , simply change the
             <code>Button.href</code>
             property.
-        </p>
-        <Repl value={examples.tags.href} />
+        </DocsBlock>
     </Article>
 
     <Article>
-        <Header>Functional Buttons</Header>
-        <p>Luda offers some functional buttons, let's have a look at what they can do.</p>
+        <DocsBlock title="Functional Buttons">
+            Luda offers some functional buttons, let's have a look at what they can do.
+        </DocsBlock>
 
-        <Header size="2">Checkbox Buttons</Header>
-        <DocsTypeHints
-            types={['type Button.checkbox = boolean;', 'type Button.id = string;', 'type Button.name = string;', 'type Button.value = string;']} />
-        <p>
+        <DocsBlock
+            code={examples.functional.checkbox}
+            title="Checkbox Buttons"
+            types={['type Button.checkbox = boolean;', 'type Button.id = string;', 'type Button.name = string;', 'type Button.value = string;']}
+            small>
             Checkbox
             <code>Button</code>
             s look similar to normal
@@ -95,13 +99,13 @@
             is very simple to create, just toggle the
             <code>Button.checkbox</code>
             property.
-        </p>
-        <Repl value={examples.functional.checkbox} />
+        </DocsBlock>
 
-        <Header size="2">Radio Buttons</Header>
-        <DocsTypeHints
-            types={['type Button.radio = boolean;', 'type Button.group = string;', 'type Button.id = string;', 'type Button.name = string;', 'type Button.value = string;']} />
-        <p>
+        <DocsBlock
+            code={examples.functional.radio}
+            title="Radio Buttons"
+            types={['type Button.radio = boolean;', 'type Button.group = string;', 'type Button.id = string;', 'type Button.name = string;', 'type Button.value = string;']}
+            small>
             Radio
             <code>Button</code>
             s look similar to normal
@@ -117,34 +121,34 @@
             to the same reference for multiple
             <code>Button</code>
             s to work.
-        </p>
-        <Repl value={examples.functional.radio} />
+        </DocsBlock>
 
-        <Header size="2">File Buttons</Header>
-        <DocsTypeHints
-            types={['type Button.file = boolean;', 'type Button.id = string;', 'type Button.multiple = boolean', 'type Button.name = string;']} />
-        <p>
+        <DocsBlock
+            code={examples.functional.file}
+            title="File Buttons"
+            types={['type Button.file = boolean;', 'type Button.id = string;', 'type Button.multiple = boolean', 'type Button.name = string;']}
+            small>
             File
             <code>Button</code>
             s are used to pick up files. It's easy to create, almost the same as creating checkbox
             and radio
             <code>Button</code>
             s. Let's go straight to the below examples.
-        </p>
-        <Repl value={examples.functional.file} />
+        </DocsBlock>
     </Article>
 
     <Article>
-        <Header>Button States</Header>
-        <p>
+        <DocsBlock title="Button States">
             Button states can be controlled through the relavent
             <code>Button.*</code>
             properties
-        </p>
+        </DocsBlock>
 
-        <Header size="2">Active</Header>
-        <DocsTypeHints types={['type Button.active = boolean;']} />
-        <p>
+        <DocsBlock
+            code={examples.states.active}
+            title="Active Buttons"
+            types={['type Button.active = boolean;']}
+            small>
             The
             <code>Button.active</code>
             property is used to show the active state of a
@@ -152,34 +156,42 @@
             or a functional
             <code>Button</code>
             , you can see the effect in the below examples.
-        </p>
-        <p>
-            Also note, whenever a checkbox
-            <code>Button</code>
-            was selected by the user,
-            <code>Button.active</code>
-            will be set to
-            <code>true</code>
-            . Like-wise, if you set
-            <code>Button.active</code>
-            , it will reflect the in the form state.
-        </p>
-        <p>
-            Finally note, to activate a radio
-            <code>Button</code>
-            , you need to set
-            <code>Button.group</code>
-            to
-            {@html `<code>Button.value</code>.`}
-            Since radio
-            <code>Buttons</code>
-            share the same single reference.
-        </p>
-        <Repl value={examples.states.active} />
+            <div class="alert mt-medium">
+                <p class="alert-content">
+                    <b>NOTE:</b>
+                    Whenever a checkbox
+                    <code>Button</code>
+                    was selected by the user,
+                    <code>Button.active</code>
+                    will be set to
+                    <code>true</code>
+                    . Like-wise, if you set
+                    <code>Button.active</code>
+                    , it will reflect the in the form state.
+                </p>
+            </div>
 
-        <Header size="2">Disabled</Header>
-        <DocsTypeHints types={['type Button.disabled = boolean;']} />
-        <p>
+            <div class="alert mt-medium">
+                <p class="alert-content">
+                    <b>NOTE 2:</b>
+                    To activate a radio
+                    <code>Button</code>
+                    , you need to set
+                    <code>Button.group</code>
+                    to
+                    {@html `<code>Button.value</code>.`}
+                    Since radio
+                    <code>Buttons</code>
+                    share the same form reference.
+                </p>
+            </div>
+        </DocsBlock>
+
+        <DocsBlock
+            code={examples.states.disabled}
+            title="Disabled Buttons"
+            types={['type Button.disabled = boolean;']}
+            small>
             The
             <code>Button.disabled</code>
             property can be used to disable a
@@ -189,35 +201,33 @@
             . Disabled
             <code>Button</code>
             s cannot be focused nor respond to user actions.
-        </p>
-        <Repl value={examples.states.disabled} />
+        </DocsBlock>
 
-        <Header size="2">Readonly</Header>
-        <small class="d-block">
-            <code>type Button.readonly = boolean;</code>
-        </small>
-        <p>
+        <DocsBlock
+            code={examples.states.readonly}
+            title="Readonly Buttons"
+            types={['type Button.readonly = boolean;']}
+            small>
             A readonly functional
             <code>Button</code>
             cannot be focused, it doesn't respond to user actions. But still can be submitted if
             included in a
-            <code>{'<form>'}</code>
-            .
-        </p>
-        <Repl value={examples.states.readonly} />
+            {@html `<code>&lt;form&gt;</code>.`}
+        </DocsBlock>
     </Article>
 
     <Article>
-        <Header>Size Modifiers</Header>
-        <p>
+        <DocsBlock title="Size Modifiers">
             If you want to change the size of a
             <code>Button</code>
             , you can use the side modifier properties
-        </p>
+        </DocsBlock>
 
-        <Header size="2">Small</Header>
-        <DocsTypeHints types={['type Button.size = "small";']} />
-        <p>
+        <DocsBlock
+            code={examples.sizes.small}
+            title="Small Buttons"
+            types={['type Button.size = "small";']}
+            small>
             By setting
             <code>Button.size</code>
             to
@@ -225,12 +235,13 @@
             , it makes the
             <code>Button</code>
             smaller.
-        </p>
-        <Repl value={examples.sizes.small} />
+        </DocsBlock>
 
-        <Header size="2">Large</Header>
-        <DocsTypeHints types={['type Button.size = "large";']} />
-        <p>
+        <DocsBlock
+            code={examples.sizes.large}
+            title="Fluid Buttons"
+            types={['type Button.size = "large";']}
+            small>
             By setting
             <code>Button.size</code>
             to
@@ -238,45 +249,41 @@
             , it makes the
             <code>Button</code>
             larger.
-        </p>
-        <Repl value={examples.sizes.large} />
+        </DocsBlock>
 
-        <Header size="2">Fluid</Header>
-        <DocsTypeHints types={['type Button.fluid = boolean;']} />
-        <p>
-            By toggling
-            <code>Button.size</code>
-            , it makes the
+        <DocsBlock
+            code={examples.sizes.fluid}
+            title="Fluid Buttons"
+            types={['type Button.fluid = boolean;']}
+            small>
+            By toggling the
+            <code>Button.fluid</code>
+            property, it makes the
             <code>Button</code>
-            take up all available horizontal space in its container. You can also use the
+            Component take up all available horizontal space in its container. You can also use the
             <code>Button.size</code>
             property with this property.
-        </p>
-        <Repl value={examples.sizes.fluid} />
+        </DocsBlock>
     </Article>
 
     <Article>
-        <Header>Event Listeners</Header>
-        <p>
+        <DocsBlock title="Event Listeners">
             Like other
             <code>Component</code>
             s within this library,
             <code>Button</code>
             also provides an event.
-        </p>
+        </DocsBlock>
 
-        <Header size="2">click</Header>
-        <small class="d-block">
-            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event">
-                <code>MDN: Click Event</code>
-            </a>
-        </small>
-        <p>
+        <DocsBlock
+            code={examples.events.click}
+            links={[["MDN: Click Event", "https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event"]]}
+            title="on:click"
+            small>
             You can bind to
             <code>on:click</code>
             to listen for when the end-user clicks a
             {@html `<code>Button</code>.`}
-        </p>
-        <Repl value={examples.events.click} />
+        </DocsBlock>
     </Article>
 </Layout>

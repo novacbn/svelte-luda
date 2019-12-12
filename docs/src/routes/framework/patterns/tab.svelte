@@ -47,13 +47,13 @@
             title="Vertical Tabs"
             types={['type TabPane.active = boolean;', 'type TabPane.title = string;']}
             small>
-            To create vertical create a
+            To create vertical tabs, use the
             <code>Tab</code>
-            parent Component with the other basic compositional Components. Use
+            Component with the other basic compositional tab Components. Use
             <code>TabPane.active</code>
             to set your default tab, and then
             <code>TabPane.title</code>
-            to set your indicator title.
+            to set your indicator titles.
         </DocsBlock>
     </Article>
 </Layout>

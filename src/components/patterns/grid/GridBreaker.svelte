@@ -1,10 +1,10 @@
 <script>
-    import {parse_utility} from "../../../util/luda";
+    import {get_attributes} from "../../../util/browser";
+    import {get_utilities} from "../../../util/luda";
 
     let _class = "";
-    export let style = "";
 
     export {_class as class};
 </script>
 
-<hr class="{parse_utility($$props)} {_class}" {style} />
+<hr class="{get_utilities($$props)} {_class}" {...get_attributes($$props)} />

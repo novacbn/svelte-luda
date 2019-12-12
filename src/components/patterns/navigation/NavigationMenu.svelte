@@ -1,12 +1,12 @@
 <script>
     import {getContext} from "svelte";
 
-    import {parse_utility} from "../../../util/luda";
+    import {get_attributes} from "../../../util/browser";
+    import {get_utilities} from "../../../util/luda";
 
     import {NAVIGATION_CONTEXT_SYMBOL} from "./Navigation.svelte";
 
     let _class = "";
-    export let style = "";
 
     export let opened = false;
 
@@ -20,6 +20,11 @@
 </script>
 
 <!-- HACK: `data-toggle-target` is required, even if unused, so collapsed menu can be hidden by CSS -->
-<div class="nav-menu {opened_class} {parse_utility($$props)} {_class}" {style} data-toggle-target>
+<div
+    class="nav-menu {opened_class}
+    {get_utilities($$props)}
+    {_class}"
+    {...get_attributes($$props)}
+    data-toggle-target>
     <slot />
 </div>
