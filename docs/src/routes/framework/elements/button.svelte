@@ -2,6 +2,8 @@
     const {Article, Header} = window.luda;
 
     import Repl from "../../../components/Repl.svelte";
+    import DocsImport from "../../../components/docs/DocsImport.svelte";
+
     import Layout from "../_layout.svelte";
 
     import examples from "./_button.toml";
@@ -15,24 +17,13 @@
             functionality or even some times act as a link.
         </Header>
 
-        <Header size="2">Import via CommonJS</Header>
-        <pre>
-            <code>const Button = require("svelte-luda/lib/elements/Button.svelte");</code>
-        </pre>
+        <Header size="2">Importing from Package</Header>
 
-        <Header size="2">Import via ES2015</Header>
-        <pre>
-            <code>import Button from "svelte-luda/lib/elements/Button.svelte";</code>
-        </pre>
-
-        <Header size="2">
-            Import from
-            <code>{'<script />'}</code>
-            Package
-        </Header>
-        <pre>
-            <code>const {'{Button}'} = window.luda;</code>
-        </pre>
+        <DocsImport
+            imports={[
+                ["elements", "Button", ["BUTTON_COLOR_NAMES", "BUTTON_SIZE_NAMES"]]
+            ]}
+        />
     </Article>
 
     <Article>

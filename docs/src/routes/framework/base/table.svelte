@@ -2,6 +2,8 @@
     const {Article, Header} = window.luda;
 
     import Repl from "../../../components/Repl.svelte";
+    import DocsImport from "../../../components/docs/DocsImport.svelte";
+
     import Layout from "../_layout.svelte";
 
     import examples from "./_table.toml";
@@ -15,24 +17,13 @@
             table comprised of rows and columns of cells containing data.
         </Header>
 
-        <Header size="2">Import via CommonJS</Header>
-        <pre>
-            <code>const Table = require("svelte-luda/lib/base/Table.svelte");</code>
-        </pre>
+        <Header size="2">Importing from Package</Header>
 
-        <Header size="2">Import via ES2015</Header>
-        <pre>
-            <code>import Button from "svelte-luda/lib/base/Table.svelte";</code>
-        </pre>
-
-        <Header size="2">
-            Import from
-            <code>{'<script />'}</code>
-            Package
-        </Header>
-        <pre>
-            <code>const {'{Table}'} = window.luda;</code>
-        </pre>
+        <DocsImport
+            imports={[
+                ["base", "Table"]
+            ]}
+        />
     </Article>
 
     <Article>
