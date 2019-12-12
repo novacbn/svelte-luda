@@ -79,7 +79,7 @@ ${left_arrow}/script>`;
 </script>
 
 <script>
-    const {TabIndicators, TabPane, TabPanes, Tab} = luda;
+    const {TabPane, TabPanes, Tab} = luda;
 
     export let imports = [];
 
@@ -89,8 +89,6 @@ ${left_arrow}/script>`;
 </script>
 
 <Tab>
-    <TabIndicators />
-
     <TabPanes>
         <TabPane title="ES2015" active>
             <pre class="code py-small">

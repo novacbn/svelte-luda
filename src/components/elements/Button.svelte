@@ -3,7 +3,7 @@
     import {COLOR_NAMES, SIZE_NAMES} from "../../util/luda";
 
     /**
-     *
+     * Represents a `string[]` of possible options for `Button.color`
      */
     export const BUTTON_COLOR_NAMES = [
         COLOR_NAMES.danger,
@@ -14,7 +14,7 @@
     ];
 
     /**
-     *
+     * Represents a `string[]` of possible options for `Button.size`
      */
     export const BUTTON_SIZE_NAMES = [SIZE_NAMES.large, SIZE_NAMES.small];
 

@@ -12,7 +12,6 @@
 </script>
 
 <Button color="primary" on:click={on_click}>Increment +1</Button>
-
 <Button color="danger" disabled hollow>{click_amount}</Button>"""
 
 [functional]

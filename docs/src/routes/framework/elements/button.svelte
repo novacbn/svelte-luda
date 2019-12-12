@@ -3,6 +3,7 @@
 
     import Repl from "../../../components/Repl.svelte";
     import DocsImport from "../../../components/docs/DocsImport.svelte";
+    import DocsTypeHints from "../../../components/docs/DocsTypeHints.svelte";
 
     import Layout from "../_layout.svelte";
 
@@ -13,17 +14,14 @@
     <Article>
         <Header fw-semibold>Button</Header>
         <Header size="3" fw-light>
-            Buttons are simple blocky elements that be clicked to active internal application
+            Buttons are simple blocky elements that can be clicked to active internal application
             functionality or even some times act as a link.
         </Header>
 
         <Header size="2">Importing from Package</Header>
 
         <DocsImport
-            imports={[
-                ["elements", "Button", ["BUTTON_COLOR_NAMES", "BUTTON_SIZE_NAMES"]]
-            ]}
-        />
+            imports={[['elements', 'Button', ['BUTTON_COLOR_NAMES', 'BUTTON_SIZE_NAMES']]]} />
     </Article>
 
     <Article>
@@ -36,9 +34,8 @@
         </p>
 
         <Header size="2">Solid Buttons</Header>
-        <small class="d-block">
-            <code>type Button.color = "danger" | "dark" | "light" | "primary" | "secondary";</code>
-        </small>
+        <DocsTypeHints
+            types={['type Button.color = "danger" | "dark" | "light" | "primary" | "secondary";']} />
         <p>
             Change the
             <code>Button.color</code>
@@ -47,9 +44,7 @@
         <Repl value={examples.styles.solid} />
 
         <Header size="2">Hollow Buttons</Header>
-        <small class="d-block">
-            <code>type Button.hollow = boolean;</code>
-        </small>
+        <DocsTypeHints types={['type Button.hollow = boolean;']} />
         <p>
             A hollow button shows its background when being hovered of clicked. Toggle the
             <code>Button.hollow</code>
@@ -58,9 +53,7 @@
         <Repl value={examples.styles.hollow} />
 
         <Header size="2">Text Buttons</Header>
-        <small class="d-block">
-            <code>type Button.text = boolean;</code>
-        </small>
+        <DocsTypeHints types={['type Button.text = boolean;']} />
         <p>
             Text buttons have the same sizes as solid and hollow buttons. They have no backgrounds
             or borders. Toggle the
@@ -72,9 +65,7 @@
 
     <Article>
         <Header>Button Tags</Header>
-        <small class="d-block">
-            <code>type Button.href = string;</code>
-        </small>
+        <DocsTypeHints types={['type Button.href = string;']} />
         <p>
             To utilize links as a
             <code>Button</code>
@@ -90,20 +81,8 @@
         <p>Luda offers some functional buttons, let's have a look at what they can do.</p>
 
         <Header size="2">Checkbox Buttons</Header>
-        <small class="d-block">
-            <pre>
-                <code>type Button.checkbox = boolean;</code>
-            </pre>
-            <pre>
-                <code>type Button.id = string;</code>
-            </pre>
-            <pre>
-                <code>type Button.name = string;</code>
-            </pre>
-            <pre>
-                <code>type Button.value = string;</code>
-            </pre>
-        </small>
+        <DocsTypeHints
+            types={['type Button.checkbox = boolean;', 'type Button.id = string;', 'type Button.name = string;', 'type Button.value = string;']} />
         <p>
             Checkbox
             <code>Button</code>
@@ -120,23 +99,8 @@
         <Repl value={examples.functional.checkbox} />
 
         <Header size="2">Radio Buttons</Header>
-        <small class="d-block">
-            <pre>
-                <code>type Button.radio = boolean;</code>
-            </pre>
-            <pre>
-                <code>type Button.group = string;</code>
-            </pre>
-            <pre>
-                <code>type Button.id = string;</code>
-            </pre>
-            <pre>
-                <code>type Button.name = string;</code>
-            </pre>
-            <pre>
-                <code>type Button.value = string;</code>
-            </pre>
-        </small>
+        <DocsTypeHints
+            types={['type Button.radio = boolean;', 'type Button.group = string;', 'type Button.id = string;', 'type Button.name = string;', 'type Button.value = string;']} />
         <p>
             Radio
             <code>Button</code>
@@ -148,25 +112,17 @@
             <code>Button</code>
             is very simple to create, just toggle the
             <code>Button.radio</code>
-            property. Make sure to also bind <code>Button.group</code> to the same reference for multiple <code>Button</code>s to work.
+            property. Make sure to also bind
+            <code>Button.group</code>
+            to the same reference for multiple
+            <code>Button</code>
+            s to work.
         </p>
         <Repl value={examples.functional.radio} />
 
         <Header size="2">File Buttons</Header>
-        <small class="d-block">
-            <pre>
-                <code>type Button.file = boolean;</code>
-            </pre>
-            <pre>
-                <code>type Button.id = string;</code>
-            </pre>
-            <pre>
-                <code>type Button.multiple = string;</code>
-            </pre>
-            <pre>
-                <code>type Button.name = string;</code>
-            </pre>
-        </small>
+        <DocsTypeHints
+            types={['type Button.file = boolean;', 'type Button.id = string;', 'type Button.multiple = boolean', 'type Button.name = string;']} />
         <p>
             File
             <code>Button</code>
@@ -187,9 +143,7 @@
         </p>
 
         <Header size="2">Active</Header>
-        <small class="d-block">
-            <code>type Button.active = boolean;</code>
-        </small>
+        <DocsTypeHints types={['type Button.active = boolean;']} />
         <p>
             The
             <code>Button.active</code>
@@ -224,9 +178,7 @@
         <Repl value={examples.states.active} />
 
         <Header size="2">Disabled</Header>
-        <small class="d-block">
-            <code>type Button.disabled = boolean;</code>
-        </small>
+        <DocsTypeHints types={['type Button.disabled = boolean;']} />
         <p>
             The
             <code>Button.disabled</code>
@@ -264,9 +216,7 @@
         </p>
 
         <Header size="2">Small</Header>
-        <small class="d-block">
-            <code>type Button.size = "small";</code>
-        </small>
+        <DocsTypeHints types={['type Button.size = "small";']} />
         <p>
             By setting
             <code>Button.size</code>
@@ -279,9 +229,7 @@
         <Repl value={examples.sizes.small} />
 
         <Header size="2">Large</Header>
-        <small class="d-block">
-            <code>type Button.size = "large";</code>
-        </small>
+        <DocsTypeHints types={['type Button.size = "large";']} />
         <p>
             By setting
             <code>Button.size</code>
@@ -294,9 +242,7 @@
         <Repl value={examples.sizes.large} />
 
         <Header size="2">Fluid</Header>
-        <small class="d-block">
-            <code>type Button.fluid = boolean;</code>
-        </small>
+        <DocsTypeHints types={['type Button.fluid = boolean;']} />
         <p>
             By toggling
             <code>Button.size</code>
@@ -329,8 +275,7 @@
             You can bind to
             <code>on:click</code>
             to listen for when the end-user clicks a
-            <code>Button</code>
-            .
+            {@html `<code>Button</code>.`}
         </p>
         <Repl value={examples.events.click} />
     </Article>

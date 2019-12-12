@@ -114,15 +114,27 @@
 
     import {parse_utility} from "../../../util/luda";
 
+    import TabIndicators from "./TabIndicators.svelte";
+
     let _class = "";
     export let style = "";
 
+    export let nocontext = false;
+
     export {_class as class};
 
-    const context = make_context();
-    setContext(TAB_CONTEXT_SYMBOL, context);
+    // We should be able to allow the end-developers to specify if
+    // they want to handle state manually.
+    if (!nocontext) {
+        const context = make_context();
+        setContext(TAB_CONTEXT_SYMBOL, context);
+    }
 </script>
 
 <div class="tab {parse_utility($$props)} {_class}" {style}>
+    <slot name="indicators">
+        <TabIndicators />
+    </slot>
+
     <slot />
 </div>

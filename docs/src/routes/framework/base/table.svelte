@@ -3,6 +3,7 @@
 
     import Repl from "../../../components/Repl.svelte";
     import DocsImport from "../../../components/docs/DocsImport.svelte";
+    import DocsTypeHints from "../../../components/docs/DocsTypeHints.svelte";
 
     import Layout from "../_layout.svelte";
 
@@ -19,11 +20,7 @@
 
         <Header size="2">Importing from Package</Header>
 
-        <DocsImport
-            imports={[
-                ["base", "Table"]
-            ]}
-        />
+        <DocsImport imports={[['base', 'Table']]} />
     </Article>
 
     <Article>
@@ -44,9 +41,7 @@
         <Repl value={examples.styles.plain} />
 
         <Header size="2">Bordered Table</Header>
-        <small class="d-block">
-            <code>type Table.border = boolean;</code>
-        </small>
+        <DocsTypeHints types={['type Table.border = boolean;']} />
         <p>
             Change the
             <code>Table.border</code>
@@ -55,9 +50,7 @@
         <Repl value={examples.styles.bordered} />
 
         <Header size="2">Striped Table</Header>
-        <small class="d-block">
-            <code>type Table.stripes = boolean;</code>
-        </small>
+        <DocsTypeHints types={['type Table.stripes = boolean;']} />
         <p>
             Change the
             <code>Table.stripes</code>
@@ -66,15 +59,7 @@
         <Repl value={examples.styles.striped} />
 
         <Header size="2">Bordered and Striped Table</Header>
-        <small class="d-block">
-            <pre>
-                <code>type Table.border = boolean;</code>
-            </pre>
-
-            <pre>
-                <code>type Table.stripes = boolean;</code>
-            </pre>
-        </small>
+        <DocsTypeHints types={['type Table.border = boolean;', 'type Table.stripes = boolean;']} />
         <p>
             Use both the
             <code>Table.border</code>
@@ -94,9 +79,7 @@
         </p>
 
         <Header size="2">Hover Effect</Header>
-        <small class="d-block">
-            <code>type Table.hover = boolean;</code>
-        </small>
+        <DocsTypeHints types={['type Table.hover = boolean;']} />
         <p>
             The
             <code>Table.hover</code>
@@ -108,9 +91,7 @@
         <Repl value={examples.modifiers.hover} />
 
         <Header size="2">No Wrap</Header>
-        <small class="d-block">
-            <code>type Table.nowrap = boolean;</code>
-        </small>
+        <DocsTypeHints types={['type Table.nowrap = boolean;']} />
         <p>
             A
             <code>Table</code>

@@ -111,7 +111,7 @@ window.addEventListener("load", () => {
         "framework/patterns/modal": require("./routes/framework/_501.svelte").default,
         "framework/patterns/navigation": require("./routes/framework/_501.svelte").default,
         "framework/patterns/search-bar": require("./routes/framework/_501.svelte").default,
-        "framework/patterns/tab": require("./routes/framework/_501.svelte").default,
+        "framework/patterns/tab": require("./routes/framework/patterns/tab.svelte").default,
 
         /**
          * framework/utilities
