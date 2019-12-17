@@ -277,7 +277,7 @@
 
         <DocsBlock
             code={examples.events.click}
-            links={[["MDN: Click Event", "https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event"]]}
+            links={[['MDN: Click Event', 'https://developer.mozilla.org/en-US/docs/Web/API/Element/click_event']]}
             title="on:click"
             small>
             You can bind to

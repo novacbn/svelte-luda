@@ -83,12 +83,17 @@ ${code}
 </script>
 
 <script>
+    const {Button} = window.luda;
+
+    import {copy_text} from "../util/browser";
+    import {compress_text} from "../util/string";
+
     import CodeFlask from "./CodeFlask.svelte";
 
-    let _class;
+    let _class = "";
     export let style = "";
 
-    export let mode = 0;
+    export let example = "";
     export let value = "";
 
     export {_class as class};
@@ -96,12 +101,7 @@ ${code}
     let component;
     let generated = "";
     let preview_element;
-
-    function on_mode_select(event, _mode) {
-        event.preventDefault();
-
-        mode = parseInt(event.target.getAttribute("data-mode"));
-    }
+    let textarea;
 
     const update_render = debounce((code, target) => {
         if (component) {
@@ -114,6 +114,19 @@ ${code}
         component = new Component({target});
     }, 250);
 
+    function on_copy_click(event) {
+        event.preventDefault();
+
+        copy_text(value);
+    }
+
+    let href = "";
+    $: {
+        // TODO: replace `replace` after example stuff is completed
+        if (value && value !== {}) href = `#/scratchpad?code=${compress_text(value)}`;
+        else if (example) href = `#/scratchpad?example=${example}`;
+    }
+
     $: {
         if (preview_element) {
             update_render(value, preview_element);
@@ -121,8 +134,23 @@ ${code}
     }
 </script>
 
-<div class="modal {_class}" {style}>
+<style>
+    .docs-repl :global(.docs-repl-overlay) {
+        visibility: hidden;
+    }
+
+    .docs-repl:hover :global(.docs-repl-overlay) {
+        visibility: visible;
+    }
+</style>
+
+<div class="modal docs-repl {_class}" {style}>
     <div class="modal bc-light" bind:this={preview_element} />
 
-    <CodeFlask class="rel w-100" style="height:25rem;" bind:value />
+    <CodeFlask class="rel w-100" style="border-top:8px solid var(--bc-muted);height:25rem;" bind:value>
+        <div class="docs-repl-overlay abs-t abs-r mt-small mr-small" style="z-index:2;">
+            <Button size="small" target="_blank" {href}>REPL</Button>
+            <Button color="secondary" size="small" on:click={on_copy_click}>COPY</Button>
+        </div>
+    </CodeFlask>
 </div>

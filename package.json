@@ -29,6 +29,7 @@
     "devDependencies": {
         "@sveltejs/svelte-repl": "^0.1.16",
         "codeflask": "^1.4.1",
+        "lz-string": "^1.4.4",
         "parcel-bundler": "^1.12.4",
         "parcel-plugin-svelte": "^4.0.5",
         "prettier": "^1.14.3",

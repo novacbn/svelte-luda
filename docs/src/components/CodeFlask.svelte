@@ -31,11 +31,27 @@
 </script>
 
 <style>
-    :global(.codeflask__code) {
-        background-color: inherit;
+    .docs-codeflask :global(.codeflask--has-line-numbers:before),
+    .docs-codeflask :global(.codeflask__lines) {
+        background-color: var(--bc-muted) !important;
+
+        z-index: 3;
+    }
+
+    .docs-codeflask :global(.codeflask__code) {
+        background: inherit;
         color: inherit;
+        padding: 0;
         line-height: inherit;
+    }
+
+    .docs-codeflask :global(.codeflask__flatten) {
+        width: calc(100% - 40px) !important;
     }
 </style>
 
-<div class={_class} {style} bind:this={editor_element} />
+<div class="rel docs-codeflask">
+    <div class={_class} {style} bind:this={editor_element} />
+
+    <slot />
+</div>
