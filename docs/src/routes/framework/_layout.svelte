@@ -1,15 +1,37 @@
+<script context="module">
+    /**
+     * Represents the `Symbol` used to access the `framework/_layout.svelte` runtime context
+     */
+    export const FRAMEWORK_CONTEXT_SYMBOL = Symbol("luda-docs-layout");
+</script>
+
 <script>
+    import {setContext} from "svelte";
+
     const {
         Button,
+        Grid,
         Navigation,
         NavigationButton,
         NavigationLogo,
         NavigationItems,
         NavigationMenu
     } = window.luda;
+
+    import DocsHeaders from "../../components/docs/DocsHeaders.svelte";
+
+    import {header} from "../../stores/header";
+
+    const headers = header();
+
+    setContext(FRAMEWORK_CONTEXT_SYMBOL, {
+        headers
+    });
+
+    window.requestIdleCallback(() => headers.scroll_header());
 </script>
 
-<div class="grid-edge">
+<Grid edge>
     <Navigation class="col-12 col-3-m" aside>
         <NavigationLogo class="td-none">
             <h1 class="c-light">svelte-luda</h1>
@@ -114,4 +136,6 @@
     <main class="col-auto p-medium pt-small-m px-large-m pb-large-m">
         <slot />
     </main>
-</div>
+
+    <DocsHeaders />
+</Grid>

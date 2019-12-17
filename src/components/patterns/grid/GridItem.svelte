@@ -60,13 +60,13 @@
     ];
 
     const align_guard = select_format("GridItem.align", "as-%s", GRID_ITEM_ALIGN_NAMES, true);
-    const align_m_guard = select_format(
+    const align_medium_guard = select_format(
         "GridItem.align_m",
         "as-%s-" + SCREEN_SHORT_NAMES.medium,
         GRID_ITEM_ALIGN_NAMES,
         true
     );
-    const align_l_guard = select_format(
+    const align_large_guard = select_format(
         "GridItem.align_l",
         "as-%s-" + SCREEN_SHORT_NAMES.large,
         GRID_ITEM_ALIGN_NAMES,
@@ -74,13 +74,13 @@
     );
 
     const order_guard = select_format_signed("GridItem.order", "od-", "on-", GRID_ITEM_ORDER_NAMES);
-    const order_m_guard = select_format_signed(
+    const order_medium_guard = select_format_signed(
         "GridItem.order_m",
         "od-%s-" + SCREEN_SHORT_NAMES.medium,
         "on-%s-" + SCREEN_SHORT_NAMES.medium,
         GRID_ITEM_ORDER_NAMES
     );
-    const order_l_guard = select_format_signed(
+    const order_large_guard = select_format_signed(
         "GridItem.order_l",
         "od-%s-" + SCREEN_SHORT_NAMES.large,
         "on-%s-" + SCREEN_SHORT_NAMES.large,
@@ -88,12 +88,12 @@
     );
 
     const offset_guard = select_format("GridItem.offset", "offset-%s", GRID_ITEM_OFFSET_NAMES);
-    const offset_m_guard = select_format(
+    const offset_medium_guard = select_format(
         "GridItem.offset_m",
         "offset-%s-" + SCREEN_SHORT_NAMES.medium,
         GRID_ITEM_OFFSET_NAMES
     );
-    const offset_l_guard = select_format(
+    const offset_large_guard = select_format(
         "GridItem.offset_l",
         "offset-%s-" + SCREEN_SHORT_NAMES.large,
         GRID_ITEM_OFFSET_NAMES
@@ -139,35 +139,35 @@
     // NOTE: I know this all looks ugly, but currently is the way I see
     // on how to manage screen breaks and such
     $: align_class = align ? align_guard(align) : "";
-    $: align_m_class = align_m ? align_m_guard(align_m) : "";
-    $: align_l_class = align_l ? align_l_guard(align_l) : "";
+    $: align_medium_class = align_m ? align_medium_guard(align_m) : "";
+    $: align_large_class = align_l ? align_large_guard(align_l) : "";
 
     $: offset_class = offset ? offset_guard(offset) : "";
-    $: offset_m_class = offset_m ? offset_m_guard(offset_m) : "";
-    $: offset_l_class = offset_l ? offset_l_guard(offset_l) : "";
+    $: offset_medium_class = offset_m ? offset_medium_guard(offset_m) : "";
+    $: offset_large_class = offset_l ? offset_large_guard(offset_l) : "";
 
     $: order_class = order ? order_guard(order) : "";
-    $: order_m_class = order_m ? order_m_guard(order_m) : "";
-    $: order_l_class = order_l ? order_l_guard(order_l) : "";
+    $: order_medium_class = order_m ? order_medium_guard(order_m) : "";
+    $: order_large_class = order_l ? order_large_guard(order_l) : "";
 
     $: span_class = span ? span_guard(span) : "";
-    $: span_m_class = span_m ? span_m_guard(span_m) : "";
-    $: span_l_class = span_l ? span_l_guard(span_l) : "";
+    $: span_medium_class = span_m ? span_medium_guard(span_m) : "";
+    $: span_large_class = span_l ? span_large_guard(span_l) : "";
 </script>
 
 <div
     class="{span_class}
-    {span_m_class}
-    {span_l_class}
+    {span_medium_class}
+    {span_large_class}
     {align_class}
-    {align_m_class}
-    {align_l_class}
+    {align_medium_class}
+    {align_large_class}
     {offset_class}
-    {offset_m_class}
-    {offset_l_class}
+    {offset_medium_class}
+    {offset_large_class}
     {order_class}
-    {order_m_class}
-    {order_l_class}
+    {order_medium_class}
+    {order_large_class}
     {get_utilities($$props)}
     {_class}"
     {...get_attributes($$props)}>

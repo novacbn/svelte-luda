@@ -1,9 +1,6 @@
 <script>
-    const {Header} = window.luda;
+    import DocsHeader from "./DocsHeader.svelte";
 
-    import {get_slug} from "../../util/string";
-
-    import DocsTypeHints from "./DocsTypeHints.svelte";
     import Repl from "../Repl.svelte";
 
     export let code = "";
@@ -14,10 +11,10 @@
     export let types = [];
 
     $: header_size = small ? "2" : "1";
-    $: id = get_slug(title);
+    $: indent = small ? "medium" : "";
 </script>
 
-<Header size={header_size} {id}>{title}</Header>
+<DocsHeader size={header_size} text={title} {indent} />
 
 {#if links.length > 0}
     <small class="d-block">
@@ -30,7 +27,11 @@
 {/if}
 
 {#if types.length > 0}
-    <DocsTypeHints {types} />
+    <small class="d-block">
+        {#each types as hint}
+            <pre><code>{hint}</code></pre>
+        {/each}
+    </small>
 {/if}
 
 <p>

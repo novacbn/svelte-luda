@@ -3,8 +3,8 @@
 
     import Repl from "../../../components/Repl.svelte";
     import DocsBlock from "../../../components/docs/DocsBlock.svelte";
+    import DocsPreamble from "../../../components/docs/DocsPreamble.svelte";
     import DocsImport from "../../../components/docs/DocsImport.svelte";
-    import DocsTypeHints from "../../../components/docs/DocsTypeHints.svelte";
 
     import Layout from "../_layout.svelte";
 
@@ -13,16 +13,13 @@
 
 <Layout>
     <Article>
-        <Header fw-semibold>Button</Header>
-        <Header size="3" fw-light>
+        <DocsPreamble
+            title="Button"
+            imports={[['elements', 'Button', ['BUTTON_COLOR_NAMES', 'BUTTON_SIZE_NAMES']]]}
+        >
             Buttons are simple blocky elements that can be clicked to active internal application
             functionality or even some times act as a link.
-        </Header>
-
-        <Header size="2">Importing from Package</Header>
-
-        <DocsImport
-            imports={[['elements', 'Button', ['BUTTON_COLOR_NAMES', 'BUTTON_SIZE_NAMES']]]} />
+        </DocsPreamble>
     </Article>
 
     <Article>
@@ -239,7 +236,7 @@
 
         <DocsBlock
             code={examples.sizes.large}
-            title="Fluid Buttons"
+            title="Large Buttons"
             types={['type Button.size = "large";']}
             small>
             By setting

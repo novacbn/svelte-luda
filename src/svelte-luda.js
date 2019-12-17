@@ -1,4 +1,10 @@
 /**
+ * Stores -> Collection
+ */
+
+export {collection} from "./stores/collection";
+
+/**
  * Utilities -> Browser
  */
 

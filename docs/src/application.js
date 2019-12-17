@@ -12,7 +12,7 @@ window.Router = (application_routes) => {
     const routes = {};
 
     for (const [pattern, Component] of Object.entries(application_routes)) {
-        routes[pattern] = (params) => new Component({props: params, target: document.body});
+        routes[pattern] = (params) => [Component, params];
     }
 
     /**
@@ -20,20 +20,23 @@ window.Router = (application_routes) => {
      */
     function on_hash_change() {
         const hash = location.hash ? location.hash.slice(1) : "";
+        const [Component, params] = router(hash);
+        if (Component === window.RouteComponent) return;
 
         if (window.route_component) {
             window.route_component.$destroy();
             window.route_component = null;
         }
 
-        window.route_component = router(hash);
+        window.RouteComponent = Component;
+        window.route_component = new Component({props: params, target: document.body});
     }
 
     /**
      * Replaces the `<body>` HTML content on 404
      */
     function on_not_found() {
-        return new Status404({target: document.body});
+        return [Status404, {}];
     }
 
     const router = rlite(on_not_found, routes);
@@ -75,7 +78,7 @@ window.addEventListener("load", () => {
         "framework/base/scrollbar": require("./routes/framework/_501.svelte").default,
         "framework/base/table": require("./routes/framework/base/table.svelte").default,
         "framework/base/text": require("./routes/framework/_501.svelte").default,
-        
+
         /**
          * framework/elements
          */
@@ -90,7 +93,6 @@ window.addEventListener("load", () => {
         "framework/elements/media": require("./routes/framework/_501.svelte").default,
         "framework/elements/overlay": require("./routes/framework/_501.svelte").default,
         "framework/elements/progress": require("./routes/framework/_501.svelte").default,
-
 
         /**
          * framework/patterns
@@ -119,7 +121,8 @@ window.addEventListener("load", () => {
 
         "framework/utilities": require("./routes/framework/_501.svelte").default,
         "framework/utilities/alignment": require("./routes/framework/_501.svelte").default,
-        "framework/utilities/background": require("./routes/framework/utilities/background.svelte").default,
+        "framework/utilities/background": require("./routes/framework/utilities/background.svelte")
+            .default,
         "framework/utilities/color": require("./routes/framework/utilities/color.svelte").default,
         "framework/utilities/display": require("./routes/framework/_501.svelte").default,
         "framework/utilities/flex": require("./routes/framework/_501.svelte").default,

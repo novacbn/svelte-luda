@@ -173,6 +173,16 @@ export const UTILITY_CLASS_NAMES = {
     fw_boldest: "fw-boldest",
 
     /**
+     * `o-*` opacity utility classes
+     */
+
+    o_emphasis: "o-emphasis",
+    o_main: "o-main",
+    o_muted: "o-muted",
+    o_more_muted: "o-more-muted",
+    o_most_muted: "o-most-muted",
+
+    /**
      * `ta-*` text alignment utility classes
      */
 
@@ -235,9 +245,11 @@ export function get_utilities(props) {
     properties.sort(sort_properties);
 
     for (let property of properties) {
-        property = property.toLowerCase();
+        if (props[property]) {
+            property = property.toLowerCase();
 
-        if (UTILITY_CLASS_LOOKUP[property]) class_names.push(property);
+            if (UTILITY_CLASS_LOOKUP[property]) class_names.push(property);
+        }
     }
 
     return class_names.join(" ");

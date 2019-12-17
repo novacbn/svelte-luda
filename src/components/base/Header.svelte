@@ -35,17 +35,39 @@
     let _class = "";
 
     export let color = "";
+    export let href = "";
     export let inline = false;
+    export let target = "";
     export let size = "";
 
     export {_class as class};
 
     $: color_class = color ? color_guard(color) : "";
     $: inline_class = inline ? "typo-inline" : "";
+    $: header_class = href ? "h" + header_size : "";
     $: header_size = size ? size_guard(size) : "1";
 </script>
 
-{#if header_size === '1'}
+<!--
+    NOTE:
+        Yes this is a lot of tedious and repetive code, but the
+        end-developers should be allowed to make header links
+-->
+
+{#if href}
+    <a
+        class="{color_class}
+        {header_class}
+        {inline_class}
+        {get_utilities($$props)}
+        {_class}"
+        {href}
+        {target}
+        {...get_attributes($$props)}
+        on:click>
+        <slot />
+    </a>
+{:else if header_size === '1'}
     <h1
         class="{color_class}
         {inline_class}

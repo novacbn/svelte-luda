@@ -38,24 +38,6 @@
     /**
      *
      */
-    function debounce(func, duration) {
-        let identifier;
-
-        return (...args) => {
-            if (identifier) {
-                clearTimeout(identifier);
-                identifier = null;
-            }
-
-            identifier = setTimeout(() => {
-                func.apply(null, args);
-            }, duration);
-        };
-    }
-
-    /**
-     *
-     */
     function format_output(output) {
         let {code} = output.js;
 
@@ -86,6 +68,7 @@ ${code}
     const {Button} = window.luda;
 
     import {copy_text} from "../util/browser";
+    import {debounce} from "../util/functional";
     import {compress_text} from "../util/string";
 
     import CodeFlask from "./CodeFlask.svelte";

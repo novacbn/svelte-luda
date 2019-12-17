@@ -2,7 +2,7 @@ import lzstring from "lz-string";
 
 /**
  * Returns the supplied `text` compressed, via packaged compression library
- * @param {*} text 
+ * @param {*} text
  */
 export function compress_text(text) {
     return lzstring.compressToEncodedURIComponent(text);
@@ -10,7 +10,7 @@ export function compress_text(text) {
 
 /**
  * Returns the supplied `compressed` decompressed, via packaged compression library
- * @param {*} compressed 
+ * @param {*} compressed
  */
 export function decompress_text(compressed) {
     return lzstring.decompressFromEncodedURIComponent(compressed);
@@ -29,12 +29,24 @@ export function brotli_compress(text) {
 
 /**
  * Returns the naive-slugified version of the string, trimming spaces, replacing spaces with dashes, and lower-casing text
- * @param {*} string 
+ * @param {*} string
  */
 export function get_slug(string) {
     return string
         .trim()
+        .replace(/[:]+/g, " ")
         .replace(/\s\s+/g, " ")
         .replace(/\s/g, "-")
         .toLowerCase();
+}
+
+/**
+ * Trims the supplied Regular Expression `pattern` string from both ends of the given `string`
+ * @param {*} string
+ * @param {*} pattern
+ */
+export function trim(string, pattern = "s") {
+    const regex = new RegExp(`^${pattern}+|${pattern}+$`, "g");
+
+    return string.replace(regex, "");
 }
