@@ -42,13 +42,15 @@
     $: nav_class = close ? "nav-close" : "nav-open";
 
     /**
-     *
+     * Handles updating the state of the `NavigationButton` Component
      */
     function on_click(event) {
         if (!context) return;
 
         event.preventDefault();
-        context.state.set(!close);
+
+        close = !close;
+        context.state.set(close);
     }
 </script>
 
