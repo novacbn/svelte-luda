@@ -2,13 +2,14 @@
     "name": "svelte-luda",
     "version": "0.0.0",
     "description": "Svelte bindings for the Luda CSS framework",
-    "keywords": [],
-    "main": "lib/svelte-luda.js",
-    "typings": "types/svelte-luda.d.ts",
+    "keywords": [
+        "luda",
+        "svelte"
+    ],
+    "main": "lib/index.js",
     "files": [
         "dist",
-        "lib",
-        "types"
+        "lib"
     ],
     "author": "novacbn",
     "repository": {
@@ -20,23 +21,18 @@
         "node": ">=6.0.0"
     },
     "scripts": {
-        "build:docs": "parcel build --out-dir ./docs/dist ./docs/index.html",
         "build:lib": "npm run build:lib:browser",
-        "build:lib:browser": "parcel build ./src/svelte-luda.js --experimental-scope-hoisting --global luda --out-file ./dist/svelte-luda.umd.js",
-        "serve:docs": "parcel serve --out-dir ./docs/dist ./docs/index.html",
+        "build:lib:browser": "parcel build ./lib/index.js --experimental-scope-hoisting --global SvelteLuda --out-file ./dist/svelte-luda.umd.js",
         "prebuild:clean": "rimraf dist"
     },
     "devDependencies": {
-        "@sveltejs/svelte-repl": "^0.1.16",
-        "codeflask": "^1.4.1",
-        "lz-string": "^1.4.4",
         "parcel-bundler": "^1.12.4",
         "parcel-plugin-svelte": "^4.0.5",
         "prettier": "^1.14.3",
-        "rimraf": "^3.0.0"
+        "rimraf": "^3.0.0",
+        "svelte": "^3.16.5"
     },
     "dependencies": {
-        "luda": "^0.3.0",
-        "svelte": "^3.15.0"
+        "svelte-commons": "git+https://github.com/novacbn/svelte-commons.git#0.0.2"
     }
 }

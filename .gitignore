@@ -1,3 +1,5 @@
 /.cache/
 /node_modules/
-/docs/dist/
+/dist/docs/
+/docs/.cache/
+/docs/node_modules/

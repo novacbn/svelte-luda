@@ -1,6 +1,7 @@
 <script>
-    import {get_attributes} from "../../util/browser";
-    import {get_utilities} from "../../util/luda";
+    import {html5_passthrough} from "svelte-commons/lib/actions/browser";
+
+    import {luda_classes} from "../../actions/element";
 
     let _class = "";
 
@@ -10,9 +11,6 @@
     export let stripes = false;
 
     export {_class as class};
-
-    $: hover_class = hover ? "table-hover" : "";
-    $: wrap_class = nowrap ? "table-nowrap" : "";
 
     let table_class = "";
     $: {
@@ -26,16 +24,16 @@
 </script>
 
 <!--
-    NOTE: it's interesting that instead of a `.table` class on the base `<table>` element,
-    it's instead a parent `<div>` container. maybe to enable `.table-nowrap` more easily?
+    NOTE: It's interesting that instead of a `.table` class on the base `<table>` element,
+    it's instead a parent `<div>` container. Maybe to enable `.table-nowrap` more easily?
 -->
 <div
     class="{table_class}
-    {hover_class}
-    {wrap_class}
-    {get_utilities($$props)}
     {_class}"
-    {...get_attributes($$props)}>
+    class:table-hover={hover}
+    class:table-nowrap={nowrap}
+    use:html5_passthrough={$$props}
+    use:luda_classes={$$props}>
     <table>
         <slot />
     </table>

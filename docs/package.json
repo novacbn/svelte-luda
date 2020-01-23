@@ -1,0 +1,24 @@
+{
+    "engines": {
+        "node": ">=6.0.0"
+    },
+    "scripts": {
+        "build:docs": "parcel build --out-dir ../dist/docs ./src/index.html",
+        "serve:docs": "parcel serve --no-cache --out-dir ../dist/docs ./src/index.html",
+        "prebuild:clean": "rimraf ../dist/docs"
+    },
+    "devDependencies": {
+        "parcel-bundler": "^1.12.4",
+        "parcel-plugin-svelte": "^4.0.5",
+        "parcel-plugin-svelte-markc": "git+https://github.com/novacbn/parcel-plugin-svelte-markc.git",
+        "prettier": "^1.14.3",
+        "rimraf": "^3.0.0"
+    },
+    "dependencies": {
+        "luda": "^0.3.0",
+        "lz-string": "^1.4.4",
+        "minimatch": "^3.0.4",
+        "svelte": "^3.16.5",
+        "svelte-commons": "git+https://github.com/novacbn/svelte-commons.git#0.0.2"
+    }
+}
