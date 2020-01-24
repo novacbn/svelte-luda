@@ -1,6 +1,7 @@
 <script>
     const {Article} = window.SvelteLuda.components.base;
 
+    import {hook_code_blocks} from "../../util/code";
     import {get_documentation_route} from "../../util/documentation";
     import {get_captialized} from "../../util/string";
 
@@ -14,6 +15,11 @@
         const route = get_documentation_route(path || "");
 
         if (route) ({Component, title} = route);
+    }
+
+    let component;
+    $: {
+        if (component) hook_code_blocks("#documentation-article");
     }
 </script>
 
@@ -66,6 +72,15 @@
     :global(#documentation-article > h6:hover > a) {
         visibility: visible;
     }
+
+    :global(#documentation-article fieldset) {
+        border: 2px groove #f7f7f7;
+
+        padding-block-start: 0.35em;
+        padding-inline-start: 0.75em;
+        padding-inline-end: 0.75em;
+        padding-block-end: 0.625em;
+    }
 </style>
 
 <Article id="documentation-article">
@@ -92,7 +107,7 @@
     </ol>
 
     {#if Component}
-        <svelte:component this={Component} />
+        <svelte:component this={Component} bind:this={component} />
     {:else}
         <h2>
             404: Unknown documentation route:

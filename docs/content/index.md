@@ -28,6 +28,16 @@ npm install git+https://github.com/novacbn/svelte-luda#0.0.1
 </Article>
 ```
 
+```svelte repl
+<script>
+    import {Article, Header, Paragraph} from "svelte-luda/lib/components/base";
+
+    console.log(Header);
+</script>
+
+<Header size="2">beep</Header>
+```
+
 ## References
 
 -   [Base](./base) ― Represents basic bindings to HTML elements, such as [`Article`](./base/article.md) and [`Paragraph`](./base/paragraph.md)

@@ -1,18 +1,25 @@
 const {join} = require("path");
 const {parse} = require("url");
 
-const slugs = require("github-slugger")();
+const BananaSlug = require("github-slugger");
 const h = require("hastscript");
 const toString = require("hast-util-to-string");
 const visit = require("unist-util-visit");
 
+const highlight_css = require("highlight.js/lib/languages/css");
+const highlight_javascript = require("highlight.js/lib/languages/javascript");
+const highlight_json = require("highlight.js/lib/languages/json");
+const highlight_markdown = require("highlight.js/lib/languages/markdown");
+const highlight_shell = require("highlight.js/lib/languages/shell");
+const highlight_xml = require("highlight.js/lib/languages/xml");
+
 /**
- *
+ * Represents the working directory for the Markdown content
  */
 const CONTENT_CWD = join(process.cwd(), "content");
 
 /**
- *
+ * Represents the HTML element tags accepted as a section header
  */
 const HEADER_ELEMENTS = {
     h1: true,
@@ -24,12 +31,12 @@ const HEADER_ELEMENTS = {
 };
 
 /**
- *
+ * Represents the classes added to a section header link
  */
 const HEADER_LINK_CLASSES = "c-primary";
 
 /**
- *
+ * Represents the text used to display a section header link
  */
 const HEADER_LINK_TEXT = "#";
 
@@ -106,6 +113,8 @@ function remove_link_trailers(href) {
  * Adds `.id` property to all Markdown header elements (e.g. `<h1>`, `<h2>`) with GitHub slugs of their text
  */
 function add_header_properties() {
+    const slugs = BananaSlug();
+
     return (ast) => {
         visit(ast, "element", (node) => {
             if (!HEADER_ELEMENTS[node.tagName]) return;
@@ -181,19 +190,53 @@ function update_anchor_properties() {
 }
 
 /**
+ * Updates all Markdown codeblocks HTML output `<pre>` to include the `code` Luda
+ * and their parent header id
  *
+ * e.g.
+ *
+ * ```html
+ * <h1 id="some-slug">...</h1>
+ *
+ * <pre>
+ *     <code data-meta="repl">...</code>
+ * </pre>
+ * ```
+ *
+ * becomes:
+ *
+ * ```html
+ * <h1 id="some-slug">...</h1>
+ *
+ * <pre class="code">
+ *     <code id="repl-some-slug-1" data-meta="repl">...</code>
+ * </pre>
+ * ```
  */
 function update_code_properties() {
     return (ast) => {
+        let header_count = 1;
+        let header_id = "";
+
         visit(ast, "element", (node) => {
-            if (node.tagName !== "pre") return;
+            if (HEADER_ELEMENTS[node.tagName] && node.properties.id) {
+                header_count = 1;
+                header_id = "-" + node.properties.id;
+            } else if (node.tagName === "pre") {
+                if (node.children.length !== 1) return;
 
-            if (node.children.length !== 1) return;
+                const [child_node] = node.children;
+                if (child_node.tagName !== "code") return;
 
-            const [child_node] = node.children;
-            if (child_node.tagName !== "code") return;
+                node.properties.className = ["code"];
+                if (child_node.properties["data-meta"]) {
+                    if (header_count > 1) {
+                        child_node.properties.id = `repl${header_id}-${header_count}`;
+                    } else child_node.properties.id = `repl${header_id}`;
 
-            node.properties.className = ["code"];
+                    header_count += 1;
+                }
+            }
         });
     };
 }
@@ -203,6 +246,27 @@ module.exports = {
         add_header_properties,
         add_header_children,
         update_anchor_properties,
-        update_code_properties
+        update_code_properties,
+
+        [
+            "rehype-highlight",
+            {
+                languages: {
+                    bash: highlight_shell,
+                    css: highlight_css,
+                    html: highlight_xml,
+                    javascript: highlight_javascript,
+                    js: highlight_javascript,
+                    json: highlight_json,
+                    markdown: highlight_markdown,
+                    md: highlight_markdown,
+                    sh: highlight_shell,
+                    shell: highlight_shell,
+                    xml: highlight_xml
+                },
+
+                ignoreMissing: true
+            }
+        ]
     ]
 };
